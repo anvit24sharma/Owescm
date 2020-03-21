@@ -1,4 +1,4 @@
-package com.owescm.supplier
+package com.owescm.admin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
