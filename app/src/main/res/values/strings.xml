@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Owescm Client</string>
+    <string name="email">Email</string>
 </resources>
