@@ -11,14 +11,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        txt_SignUp.setOnClickListener {
-            startActivity((Intent(this, SignUpActivity::class.java)))
-            finish()
-        }
-        btn_login.setOnClickListener {
-            startActivity((Intent(this, MainActivity::class.java)))
-
-        }
+//        txt_SignUp.setOnClickListener {
+//            startActivity((Intent(this, SignUpActivity::class.java)))
+//            finish()
+//        }
+//        btn_login.setOnClickListener {
+//            startActivity((Intent(this, MainActivity::class.java)))
+//
+//        }
 
     }
 }
