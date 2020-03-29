@@ -1,17 +1,16 @@
 package com.owescm.client
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.item__item_home_fragment.*
+import java.util.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : androidx.fragment.app.Fragment() {
 
     var homeList: ArrayList<HomeModel> = ArrayList()
 
