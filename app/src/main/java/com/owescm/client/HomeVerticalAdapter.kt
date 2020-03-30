@@ -37,7 +37,12 @@ class HomeVerticalAdapter(
             tvMenuTitle.text = homeModel.menuTitle
 
             homeHorizontalAdapter = homeModel.let {
-                HomeHorizontalAdapter(mContext, it.itemList)
+                HomeHorizontalAdapter(mContext, it.itemList ,object : HomeHorizontalAdapter.ClickListener{
+                    override fun onItemClick(position: Int) {
+
+                    }
+
+                })
             }
             rvItemDetails.apply {
                 adapter = homeHorizontalAdapter

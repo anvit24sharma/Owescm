@@ -5,12 +5,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class HomeHorizontalAdapter(
     private val context: Context?,
-    private val products: ArrayList<ItemDetails>
+    private val products: ArrayList<ItemDetails>,
+    private val mListener: ClickListener
 ) : RecyclerView.Adapter<HomeHorizontalAdapter.PostViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         return PostViewHolder(
@@ -29,6 +31,9 @@ class HomeHorizontalAdapter(
         } else {
             holder.count.text = products[position].count.toString()
         }
+        holder.rlItem.setOnClickListener{
+            mListener.onItemClick(position)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +43,11 @@ class HomeHorizontalAdapter(
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemName = itemView.findViewById<View>(R.id.tv_itemName) as TextView
         val count = itemView.findViewById<View>(R.id.tv_count) as TextView
+        val rlItem = itemView.findViewById<RelativeLayout>(R.id.rl_item) as RelativeLayout
+    }
+
+    interface ClickListener{
+        fun onItemClick(position: Int)
     }
 
 
