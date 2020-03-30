@@ -55,5 +55,15 @@ dependencies {
     //chuck for tracking network calls
     implementation('com.readystatesoftware.chuck:library:1.1.0') {
         exclude group: 'com.google.code.gson', module: 'gson'
+
+        //Chip Navigation bar
+        implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+
+        //drawer layout
+        implementation 'androidx.drawerlayout:drawerlayout:1.0.0'
+
+        //side nav
+        implementation 'com.google.android.material:material:1.1.0-alpha09'
+
     }
 }
