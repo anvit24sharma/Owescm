@@ -20,10 +20,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var  drawerLayout: DrawerLayout
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     lateinit var navigationView: NavigationView
+    val fragment = HomeFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        openMainFragment()
 
 //        menu_bottom.get(0).isSelected =true
 //        menu_bottom.setOnItemSelectedListener{
@@ -65,6 +68,13 @@ class MainActivity : AppCompatActivity() {
 
 //        setupViewPager(viewpager)
 
+    }
+
+    private fun openMainFragment() {
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frameLayout, fragment)
+        transaction.commit()
     }
 
     private fun setClickOnNavigation() {
