@@ -16,4 +16,7 @@
     <string name="str_json_syntax_mismatch_error">Json syntax mismatch</string>
     <string name="str_bad_input">Bad Input</string>
     <string name="str_unknown_error">Unknown error</string>
+
+    <string name="transition1">Main Page</string>
+
 </resources>

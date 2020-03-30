@@ -32,7 +32,7 @@ class HomeHorizontalAdapter(
             holder.count.text = products[position].count.toString()
         }
         holder.rlItem.setOnClickListener{
-            mListener.onItemClick(position)
+            mListener.onItemClick(position,it)
         }
     }
 
@@ -47,7 +47,7 @@ class HomeHorizontalAdapter(
     }
 
     interface ClickListener{
-        fun onItemClick(position: Int)
+        fun onItemClick(position: Int, view:View)
     }
 
 

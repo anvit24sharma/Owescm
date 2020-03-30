@@ -1,12 +1,16 @@
 package com.owescm.client
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 
 class HomeVerticalAdapter(
     private var mContext: Context?,
@@ -38,8 +42,19 @@ class HomeVerticalAdapter(
 
             homeHorizontalAdapter = homeModel.let {
                 HomeHorizontalAdapter(mContext, it.itemList ,object : HomeHorizontalAdapter.ClickListener{
-                    override fun onItemClick(position: Int) {
+                    override fun onItemClick(position: Int, view:View) {
+                        val i = Intent(mContext, DetailFormActivity::class.java)
 
+                        val sharedView: View = view
+                        val transitionName: String = "Main Page"
+
+                        val transitionActivityOptions =
+                            ActivityOptions.makeSceneTransitionAnimation(
+                                mContext as Activity,
+                                sharedView,
+                                transitionName
+                            )
+                        mContext?.startActivity(i, transitionActivityOptions.toBundle())
                     }
 
                 })
