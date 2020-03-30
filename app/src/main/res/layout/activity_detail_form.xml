@@ -1,0 +1,294 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:background="#fff"
+    android:padding="6dp"
+    tools:context="com.owescm.client.DetailFormActivity"
+    >
+    <RelativeLayout
+        android:id="@+id/rL1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rL2">
+
+        <ImageView
+            android:id="@+id/btn_circle1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:src="@drawable/btn_circle" />
+
+        <TextView
+            android:id="@+id/tv_count1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemName1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_circle1"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="New"
+            android:textColor="#8000a4"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rL2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        app:layout_constraintStart_toEndOf="@+id/rL1"
+        app:layout_constraintEnd_toStartOf="@+id/rL3"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_circle2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:src="@drawable/btn_circle" />
+
+        <TextView
+            android:id="@+id/tv_count2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemName2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_circle2"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="New"
+            android:textColor="#8000a4"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rL3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        app:layout_constraintStart_toEndOf="@+id/rL2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rL4">
+
+        <ImageView
+            android:id="@+id/btn_circle3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:src="@drawable/btn_circle" />
+
+        <TextView
+            android:id="@+id/tv_count3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemName3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_circle3"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="New"
+            android:textColor="#8000a4"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rL4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        app:layout_constraintStart_toEndOf="@+id/rL3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_circle4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:src="@drawable/btn_circle" />
+
+        <TextView
+            android:id="@+id/tv_count4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemName4"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_circle4"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="New"
+            android:textColor="#8000a4"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintTop_toBottomOf="@+id/rL1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_eRfx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:textSize="20sp"
+        android:padding="4dp"
+        android:layout_marginTop="6dp"
+        android:text="Create eRfx"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txt_category"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="Category"
+        android:layout_marginTop="6dp"
+
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_eRfx" />
+
+    <EditText
+        android:id="@+id/et_security"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_eRfx"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/btn_form"
+        android:hint="Security"
+        android:padding="4dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/txt_sub_category"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+
+        android:text="Sub-Category"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_category" />
+
+    <EditText
+        android:id="@+id/et_securityManpower"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_security"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/btn_form"
+        android:hint="Security"
+        android:padding="4dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/txt_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+
+        android:text="Location"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_sub_category" />
+
+    <EditText
+        android:id="@+id/et_loc"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_securityManpower"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/btn_form"
+        android:hint="Eg:Delhi"
+        android:padding="4dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/txt_headLine"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+
+        android:text="Headline"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_loc" />
+
+    <EditText
+        android:id="@+id/et_headLine"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_loc"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/btn_form"
+        android:padding="4dp"
+        android:gravity="center"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
