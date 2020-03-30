@@ -15,9 +15,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     internal var prevMenuItem: Int? = null
-    private var drawerLayout: DrawerLayout? = null
-    private var actionBarDrawerToggle: ActionBarDrawerToggle? = null
-    private var navigationView: NavigationView? = null
+    lateinit var  drawerLayout: DrawerLayout
+    lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    lateinit var navigationView: NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,13 +51,14 @@ class MainActivity : AppCompatActivity() {
             override fun onPageScrollStateChanged(state: Int) {
 
             }
-        })
+        });
         drawerLayout = findViewById(R.id.drawer_layout)
-        actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
+        val actionBarDrawerToggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
-        supportActionBar.setDisplayHomeAsUpEnabled(true)
         navigationView = findViewById(R.id.nav_view)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         setClickOnNavigation()
 
         setupViewPager(viewpager)
@@ -69,11 +70,13 @@ class MainActivity : AppCompatActivity() {
             val id = item.itemId
             if (id == R.id.home) {
                 startActivity(Intent(this@MainActivity, HomeFragment::class.java))
-                drawerLayout!!.closeDrawers()
+                drawerLayout.closeDrawers()
             }
             true
         }
+
     }
+
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
@@ -83,12 +86,12 @@ class MainActivity : AppCompatActivity() {
 //        adapter.addFragment(ProfileFragment())
         viewPager.adapter = adapter
     }
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (actionBarDrawerToggle!!.onOptionsItemSelected(item)) {
+        return if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             true
         } else super.onOptionsItemSelected(item)
     }
-
-
 
 }
