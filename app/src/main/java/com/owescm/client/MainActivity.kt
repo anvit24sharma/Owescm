@@ -6,10 +6,12 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_detail_form.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -23,17 +25,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        menu_bottom.get(0).isSelected =true
-        menu_bottom.setOnItemSelectedListener{
-            when (it) {
-                R.id.home -> viewpager.currentItem = 0
-                R.id.profile -> viewpager.currentItem = 1
-                R.id.settings -> viewpager.currentItem = 2
-            }
-        }
+//        menu_bottom.get(0).isSelected =true
+//        menu_bottom.setOnItemSelectedListener{
+//            when (it) {
+//                R.id.home -> viewpager.currentItem = 0
+//                R.id.profile -> viewpager.currentItem = 1
+//                R.id.settings -> viewpager.currentItem = 2
+//            }
+//        }
 
 
-        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+/*        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
             }
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             override fun onPageScrollStateChanged(state: Int) {
 
             }
-        });
+        });*/
         drawerLayout = findViewById(R.id.drawer_layout)
         val actionBarDrawerToggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         setClickOnNavigation()
 
-        setupViewPager(viewpager)
+//        setupViewPager(viewpager)
 
     }
 
@@ -69,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { item ->
             val id = item.itemId
             if (id == R.id.home) {
-                startActivity(Intent(this@MainActivity, HomeFragment::class.java))
+              //  startActivity(Intent(this@MainActivity, HomeFragment::class.java))
                 drawerLayout.closeDrawers()
             }
             true
@@ -89,9 +91,15 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            true
-        } else super.onOptionsItemSelected(item)
+        val id = item.itemId
+        if (id == android.R.id.home) {
+
+            if (drawerLayout.isDrawerOpen(GravityCompat.START))
+                drawerLayout.closeDrawer(GravityCompat.START)
+            else
+                drawerLayout.openDrawer(GravityCompat.START)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
