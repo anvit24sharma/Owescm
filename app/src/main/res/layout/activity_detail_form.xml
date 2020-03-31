@@ -10,15 +10,17 @@
     tools:context="com.owescm.client.DetailFormActivity"
     >
     <RelativeLayout
-        android:transitionName="@string/rl1"
-        android:id="@+id/rL1"
+        android:transitionName="Main Page"
+        style="@style/MaterialAnimations"
+        android:id="@+id/rL_erfxNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rL2">
+        app:layout_constraintEnd_toStartOf="@+id/rL_erfxSaved"
+        >
 
         <ImageView
             android:id="@+id/btn_circle1"
@@ -45,22 +47,21 @@
             android:background="#fff"
             android:gravity="center"
             android:text="New"
-            android:textColor="#8000a4"
+            android:textColor="#000"
             android:textSize="16sp"
             android:textStyle="normal" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:transitionName="@string/rl2"
 
-        android:id="@+id/rL2"
+        android:id="@+id/rL_erfxSaved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="4dp"
-        app:layout_constraintStart_toEndOf="@+id/rL1"
-        app:layout_constraintEnd_toStartOf="@+id/rL3"
+        app:layout_constraintStart_toEndOf="@+id/rL_erfxNew"
+        app:layout_constraintEnd_toStartOf="@+id/rL_erfxLive"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -87,24 +88,22 @@
             android:layout_below="@+id/btn_circle2"
             android:background="#fff"
             android:gravity="center"
-            android:text="New"
-            android:textColor="#8000a4"
+            android:text="Saved"
+            android:textColor="#000"
             android:textSize="16sp"
             android:textStyle="normal" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:transitionName="@string/rl3"
-
-        android:id="@+id/rL3"
+        android:id="@+id/rL_erfxLive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="4dp"
-        app:layout_constraintStart_toEndOf="@+id/rL2"
+        app:layout_constraintStart_toEndOf="@+id/rL_erfxSaved"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rL4">
+        app:layout_constraintEnd_toStartOf="@+id/rL_erfxClosed">
 
         <ImageView
             android:id="@+id/btn_circle3"
@@ -130,8 +129,8 @@
             android:layout_below="@+id/btn_circle3"
             android:background="#fff"
             android:gravity="center"
-            android:text="New"
-            android:textColor="#8000a4"
+            android:text="Live"
+            android:textColor="#000"
             android:textSize="16sp"
             android:textStyle="normal" />
 
@@ -139,13 +138,12 @@
 
     <RelativeLayout
         android:transitionName="@string/rl4"
-
-        android:id="@+id/rL4"
+        android:id="@+id/rL_erfxClosed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="4dp"
-        app:layout_constraintStart_toEndOf="@+id/rL3"
+        app:layout_constraintStart_toEndOf="@+id/rL_erfxLive"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -173,8 +171,8 @@
             android:layout_below="@+id/btn_circle4"
             android:background="#fff"
             android:gravity="center"
-            android:text="New"
-            android:textColor="#8000a4"
+            android:text="Closed"
+            android:textColor="#000"
             android:textSize="16sp"
             android:textStyle="normal" />
 
@@ -184,118 +182,12 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:background="@drawable/ic_wave"
-        app:layout_constraintTop_toBottomOf="@+id/rL1"
+        app:layout_constraintTop_toBottomOf="@+id/rL_erfxNew"
         tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/txt_eRfx"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        android:textSize="20sp"
-        android:padding="4dp"
-        android:layout_marginTop="6dp"
-        android:text="Create eRfx"
-        android:gravity="center"
-        android:textColor="#000"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@id/view"/>
 
-    <TextView
-        android:id="@+id/txt_category"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="Category"
-        android:layout_marginTop="6dp"
-
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_eRfx" />
-
-    <EditText
-        android:id="@+id/et_security"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/txt_eRfx"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/btn_form"
-        android:hint="Security"
-        android:padding="4dp"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/txt_sub_category"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:layout_marginTop="6dp"
-
-        android:text="Sub-Category"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_category" />
-
-    <EditText
-        android:id="@+id/et_securityManpower"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/et_security"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/btn_form"
-        android:hint="Security"
-        android:padding="4dp"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/txt_loc"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:layout_marginTop="6dp"
-
-        android:text="Location"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_sub_category" />
-
-    <EditText
-        android:id="@+id/et_loc"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/et_securityManpower"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/btn_form"
-        android:hint="Eg:Delhi"
-        android:padding="4dp"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/txt_headLine"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:layout_marginTop="6dp"
-
-        android:text="Headline"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_loc" />
-
-    <EditText
-        android:id="@+id/et_headLine"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/et_loc"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/btn_form"
-        android:padding="4dp"
-        android:gravity="center"
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>
