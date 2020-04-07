@@ -43,7 +43,7 @@ class HomeVerticalAdapter(
                 HomeHorizontalAdapter(mContext, it.itemList, object : HomeHorizontalAdapter.ClickListener {
                     override fun onItemClick(position: Int, view: View) {
 
-                        val i = Intent(mContext, DetailFormActivity::class.java)
+                        val i = Intent(mContext, ErfxActivity::class.java)
                         val sharedView = view
                         val transitionName = "Main Page"
                         val transitionActivityOptions =
