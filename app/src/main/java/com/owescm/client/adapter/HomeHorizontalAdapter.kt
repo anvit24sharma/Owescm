@@ -1,4 +1,4 @@
-package com.owescm.client.Adapter
+package com.owescm.client.adapter
 
 
 import android.content.Context

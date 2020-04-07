@@ -1,7 +1,8 @@
-package com.owescm.client.Activity
+package com.owescm.client.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.owescm.client.Fragment.ErfxFragment.ErfxClosedFragment
 import com.owescm.client.Fragment.ErfxFragment.ErfxLiveFragment
 import com.owescm.client.Fragment.ErfxFragment.ErfxNewFragment
@@ -16,19 +17,37 @@ class ErfxActivity : AppCompatActivity() {
     val erfxLiveFragment = ErfxLiveFragment()
     val erfxSavedFragment = ErfxSavedFragment()
     val erfxClosedFragment = ErfxClosedFragment()
-
+    var from =""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_erfx)
 
-        openFragments()
+        supportActionBar?.title = "eRfx"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        from = intent.getStringExtra("from")?:""
+        openFragment()
+        initClicks()
 
 
     }
 
-    private fun openFragments() {
-        openErfxFragment()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home){
+            super.onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    private fun openFragment() {
+        when (from) {
+            "New" -> openErfxNewFragment()
+            "Saved" -> openErfxSavedFragment()
+            "Live" -> openErfxLiveFragment()
+            "Closed" -> openErfxClosedFragment()
+        }
+    }
+
+    private fun initClicks() {
         rL_erfxNew.setOnClickListener{
             openErfxNewFragment()
         }
@@ -40,7 +59,8 @@ class ErfxActivity : AppCompatActivity() {
         }
         rL_erfxClosed.setOnClickListener{
             openErfxClosedFragment()
-        }    }
+        }
+    }
 
     private fun openErfxFragment() {
         val transaction = supportFragmentManager.beginTransaction()
