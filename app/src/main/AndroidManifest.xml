@@ -11,16 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SpendManagementActivity"></activity>
-        <activity android:name=".FinalEvaluationActivity" />
-        <activity android:name=".PrimaryEvaluationActivity" />
-        <activity android:name=".ContractActivity" />
-        <activity android:name=".EAuctionActivity" />
-        <activity android:name=".ErfxActivity" />
+        <activity android:name=".Activity.SpendManagementActivity"></activity>
+        <activity android:name=".Activity.FinalEvaluationActivity" />
+        <activity android:name=".Activity.PrimaryEvaluationActivity" />
+        <activity android:name=".Activity.ContractActivity" />
+        <activity android:name=".Activity.EAuctionActivity" />
+        <activity android:name=".Activity.ErfxActivity" />
         <activity android:name=".DetailFormActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Activity.ForgotPasswordActivity" />
+        <activity android:name=".Activity.SignUpActivity" />
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

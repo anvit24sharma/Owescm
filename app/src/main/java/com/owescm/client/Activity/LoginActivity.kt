@@ -1,8 +1,10 @@
-package com.owescm.client
+package com.owescm.client.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.owescm.client.MainActivity
+import com.owescm.client.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -19,7 +21,8 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
         txt_forgot_password.setOnClickListener {
-            startActivity(Intent(this,ForgotPasswordActivity::class.java))
+            startActivity(Intent(this,
+                ForgotPasswordActivity::class.java))
         }
 
     }

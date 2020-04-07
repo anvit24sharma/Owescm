@@ -1,4 +1,4 @@
-package com.owescm.client
+package com.owescm.client.Adapter
 
 import android.app.Activity
 import android.app.ActivityOptions
@@ -10,13 +10,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.owescm.client.Activity.ErfxActivity
+import com.owescm.client.Model.HomeModel
+import com.owescm.client.R
 
 class HomeVerticalAdapter(
     private var mContext: Context?,
     private var homeList: ArrayList<HomeModel>
 ) : RecyclerView.Adapter<HomeVerticalAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):ViewHolder {
+    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_fragment,parent,false)
         return ViewHolder(itemView)
     }
@@ -36,25 +39,29 @@ class HomeVerticalAdapter(
 
         private lateinit var homeHorizontalAdapter: HomeHorizontalAdapter
 
-        fun setData(homeModel:HomeModel, position: Int) {
+        fun setData(homeModel: HomeModel, position: Int) {
             tvMenuTitle.text = homeModel.menuTitle
 
             homeHorizontalAdapter = homeModel.let {
-                HomeHorizontalAdapter(mContext, it.itemList, object : HomeHorizontalAdapter.ClickListener {
-                    override fun onItemClick(position: Int, view: View) {
+                HomeHorizontalAdapter(
+                    mContext,
+                    it.itemList,
+                    object :
+                        HomeHorizontalAdapter.ClickListener {
+                        override fun onItemClick(position: Int, view: View) {
 
-                        val i = Intent(mContext, ErfxActivity::class.java)
-                        val sharedView = view
-                        val transitionName = "Main Page"
-                        val transitionActivityOptions =
-                            ActivityOptions.makeSceneTransitionAnimation(
-                                mContext as Activity,
-                                sharedView,
-                                transitionName
-                            )
-                        mContext?.startActivity(i, transitionActivityOptions.toBundle());
-                    }
-                })
+                            val i = Intent(mContext, ErfxActivity::class.java)
+                            val sharedView = view
+                            val transitionName = "Main Page"
+                            val transitionActivityOptions =
+                                ActivityOptions.makeSceneTransitionAnimation(
+                                    mContext as Activity,
+                                    sharedView,
+                                    transitionName
+                                )
+                            mContext?.startActivity(i, transitionActivityOptions.toBundle());
+                        }
+                    })
             }
             rvItemDetails.apply {
                 adapter = homeHorizontalAdapter

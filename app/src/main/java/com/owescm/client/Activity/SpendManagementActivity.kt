@@ -1,12 +1,13 @@
-package com.owescm.client
+package com.owescm.client.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.owescm.client.R
 
-class FinalEvaluationActivity : AppCompatActivity() {
+class SpendManagementActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_final_evaluation)
+        setContentView(R.layout.activity_spend_management)
     }
 }
