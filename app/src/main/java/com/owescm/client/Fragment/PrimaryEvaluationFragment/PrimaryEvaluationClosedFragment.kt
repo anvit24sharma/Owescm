@@ -1,13 +1,13 @@
-package com.owescm.client
+package com.owescm.client.Fragment.PrimaryEvaluationFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.owescm.client.R
 
-
-class ErfxLiveFragment : Fragment() {
+class PrimaryEvaluationClosedFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,7 @@ class ErfxLiveFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_erfx_live, container, false)
+        return inflater.inflate(R.layout.fragment_primary_evaluation_closed, container, false)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.owescm.client
+package com.owescm.client.Adapter
 
 
 import android.content.Context
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.owescm.client.Model.ItemDetails
+import com.owescm.client.R
 
 
 class HomeHorizontalAdapter(

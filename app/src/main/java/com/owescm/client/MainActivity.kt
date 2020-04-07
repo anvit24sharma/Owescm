@@ -1,18 +1,15 @@
 package com.owescm.client
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_detail_form.view.*
-import kotlinx.android.synthetic.main.activity_main.*
+import com.owescm.client.Adapter.ViewPagerAdapter
+import com.owescm.client.Fragment.HomeFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -91,7 +88,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setupViewPager(viewPager: ViewPager) {
-        val adapter = ViewPagerAdapter(supportFragmentManager)
+        val adapter =
+            ViewPagerAdapter(supportFragmentManager)
         val homeFragment = HomeFragment()
         adapter.addFragment(homeFragment)
 //        adapter.addFragment(HistoryFragment())

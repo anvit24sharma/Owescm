@@ -1,7 +1,8 @@
-package com.owescm.client
+package com.owescm.client.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.owescm.client.R
 
 class EAuctionActivity : AppCompatActivity() {
 
