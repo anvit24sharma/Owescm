@@ -3,10 +3,10 @@ package com.owescm.client
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class DetailFormActivity : AppCompatActivity() {
+class EAuctionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_form)
+        setContentView(R.layout.activity_e_auction)
     }
 }

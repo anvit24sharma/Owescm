@@ -4,78 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f3f2"
+    android:background="#fff"
     tools:context=".LoginActivity">
-
-    <View
-        android:id="@+id/topView"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="#8000a4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <View
-        android:id="@+id/wave"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@drawable/ic_wave"
-        app:layout_constraintTop_toBottomOf="@id/topView"
-        tools:ignore="MissingConstraints" />
-
-<!--    <ImageView-->
-<!--        android:layout_width="100dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginEnd="35dp"-->
-<!--        android:src="@drawable/ic_person"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/already"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="2dp"
-        android:text="Already Have an"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Create Your Account"
+        android:textColor="#8000a4"
+        android:textSize="18sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dp"
-        android:text="Account?"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/already" />
+        app:layout_constraintTop_toBottomOf="@id/img_logo" />
 
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/logo"
-        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wave" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="35dp"
         android:background="@drawable/btn_edit_text_ll"
         android:gravity="center"
@@ -105,10 +66,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="35dp"
-        android:background="#f2f3f2"
+        android:background="#fff"
         android:padding="5dp"
         android:text="Forgot Password?"
-        android:textColor="#000"
+        android:textColor="#b1b1b1"
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,15 +93,14 @@
         android:id="@+id/txt_SignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f2f3f2"
-        android:padding="4dp"
+        android:background="#fff"
         android:text="Create an Account"
-        android:textColor="#8000a4"
+        android:textColor="#000"
         android:textSize="18sp"
         android:textStyle="italic"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+        android:layout_marginBottom="20dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

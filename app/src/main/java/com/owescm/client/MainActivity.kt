@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        openMainFragment()
 
         openMainFragment()
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -32,6 +33,13 @@ class MainActivity : AppCompatActivity() {
 
 //        setupViewPager(viewpager)
 
+    }
+
+    private fun openMainFragment() {
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frameLayout, fragment)
+        transaction.commit()
     }
 
     private fun setClickOnNavigation() {

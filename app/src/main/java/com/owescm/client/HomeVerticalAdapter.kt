@@ -11,14 +11,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-
 class HomeVerticalAdapter(
     private var mContext: Context?,
     private var homeList: ArrayList<HomeModel>
 ) : RecyclerView.Adapter<HomeVerticalAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_fragment, parent, false)
+    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):ViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_fragment,parent,false)
         return ViewHolder(itemView)
     }
 
@@ -41,22 +40,20 @@ class HomeVerticalAdapter(
             tvMenuTitle.text = homeModel.menuTitle
 
             homeHorizontalAdapter = homeModel.let {
-                HomeHorizontalAdapter(mContext, it.itemList ,object : HomeHorizontalAdapter.ClickListener{
-                    override fun onItemClick(position: Int, view:View) {
+                HomeHorizontalAdapter(mContext, it.itemList, object : HomeHorizontalAdapter.ClickListener {
+                    override fun onItemClick(position: Int, view: View) {
+
                         val i = Intent(mContext, DetailFormActivity::class.java)
-
-                        val sharedView: View = view
-                        val transitionName: String = "Main Page"
-
+                        val sharedView = view
+                        val transitionName = "Main Page"
                         val transitionActivityOptions =
                             ActivityOptions.makeSceneTransitionAnimation(
                                 mContext as Activity,
                                 sharedView,
                                 transitionName
                             )
-                        mContext?.startActivity(i, transitionActivityOptions.toBundle())
+                        mContext?.startActivity(i, transitionActivityOptions.toBundle());
                     }
-
                 })
             }
             rvItemDetails.apply {
