@@ -12,10 +12,8 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        txt_SignIn.setOnClickListener {
-            startActivity((Intent(this, MainActivity::class.java)))
-            finish()
-        }
+        supportActionBar?.hide()
+
         btn_SignUp.setOnClickListener {
             startActivity((Intent(this, MainActivity::class.java)))
             finish()

@@ -12,12 +12,14 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
         txt_SignUp.setOnClickListener {
-            startActivity((Intent(this, SignUpActivity::class.java)))
+            startActivity(Intent(this, SignUpActivity::class.java))
             finish()
         }
         btn_login.setOnClickListener {
-            startActivity((Intent(this, MainActivity::class.java)))
-
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        txt_forgot_password.setOnClickListener {
+            startActivity(Intent(this,ForgotPasswordActivity::class.java))
         }
 
     }
