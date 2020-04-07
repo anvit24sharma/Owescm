@@ -13,12 +13,14 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity() {
     lateinit var  drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
+    val fragment = HomeFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-
+        openMainFragment()
         drawerLayout = findViewById(R.id.drawer_layout)
         val actionBarDrawerToggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
@@ -44,6 +46,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun openMainFragment() {
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frameLayout, fragment)
+        transaction.commit()
+    }
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
