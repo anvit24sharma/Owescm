@@ -8,7 +8,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
-import com.owescm.client.Adapter.ViewPagerAdapter
+import com.owescm.client.adapter.ViewPagerAdapter
 import com.owescm.client.Fragment.HomeFragment
 
 
@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
 
         setClickOnNavigation()
 
-//        setupViewPager(viewpager)
 
     }
 

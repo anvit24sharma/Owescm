@@ -1,4 +1,4 @@
-package com.owescm.client.Activity
+package com.owescm.client.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

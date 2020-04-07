@@ -3,190 +3,205 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
     android:background="#fff"
     android:padding="6dp"
-    >
-    <RelativeLayout
-        android:transitionName="Main Page"
-        style="@style/MaterialAnimations"
-        android:id="@+id/rL_erfxNew"
-        android:layout_width="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rL_erfxSaved"
         >
 
-        <ImageView
-            android:id="@+id/btn_circle1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ffffff"
-            android:src="@drawable/btn_circle" />
-
-        <TextView
-            android:id="@+id/tv_count1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:text="+"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/itemName1"
-            android:layout_width="60dp"
+        <RelativeLayout
+            android:id="@+id/rL_erfxNew"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#fff"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
             android:gravity="center"
-            android:text="New"
-            android:layout_below="@+id/btn_circle1"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            style="@style/MaterialAnimations"
+            android:transitionName="ErfxNew"
+            android:layout_weight="1">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/btn_circle1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:src="@drawable/btn_circle" />
 
-    <RelativeLayout
+            <TextView
+                android:id="@+id/tv_count1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        android:id="@+id/rL_erfxSaved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        app:layout_constraintStart_toEndOf="@+id/rL_erfxNew"
-        app:layout_constraintEnd_toStartOf="@+id/rL_erfxLive"
-        app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/itemName1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_circle1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="New"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
-        <ImageView
-            android:id="@+id/btn_circle2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ffffff"
-            android:src="@drawable/btn_circle" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_count2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        <RelativeLayout
 
-        <TextView
-            android:id="@+id/itemName2"
-            android:layout_width="60dp"
+            android:id="@+id/rL_erfxSaved"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_circle2"
-            android:background="#fff"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
             android:gravity="center"
-            android:text="Saved"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            style="@style/MaterialAnimations"
+            android:transitionName="ErfxSaved"
+            android:layout_weight="1"
+            >
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/btn_circle2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:src="@drawable/btn_circle" />
 
-    <RelativeLayout
-        android:id="@+id/rL_erfxLive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        app:layout_constraintStart_toEndOf="@+id/rL_erfxSaved"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rL_erfxClosed">
+            <TextView
+                android:id="@+id/tv_count2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/btn_circle3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ffffff"
-            android:src="@drawable/btn_circle" />
+            <TextView
+                android:id="@+id/itemName2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_circle2"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="Saved"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
-        <TextView
-            android:id="@+id/tv_count3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/itemName3"
-            android:layout_width="60dp"
+        <RelativeLayout
+            android:id="@+id/rL_erfxLive"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_circle3"
-            android:background="#fff"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
             android:gravity="center"
-            android:text="Live"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            style="@style/MaterialAnimations"
+            android:transitionName="ErfxLive"
+            android:layout_weight="1">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/btn_circle3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:src="@drawable/btn_circle" />
 
-    <RelativeLayout
-        android:transitionName="@string/rl4"
-        android:id="@+id/rL_erfxClosed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        app:layout_constraintStart_toEndOf="@+id/rL_erfxLive"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:id="@+id/tv_count3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/btn_circle4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ffffff"
-            android:src="@drawable/btn_circle" />
+            <TextView
+                android:id="@+id/itemName3"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_circle3"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="Live"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
-        <TextView
-            android:id="@+id/tv_count4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/itemName4"
-            android:layout_width="60dp"
+        <RelativeLayout
+            android:id="@+id/rL_erfxClosed"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_circle4"
-            android:background="#fff"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="Closed"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            style="@style/MaterialAnimations"
+            android:transitionName="ErfxClosed"
+            >
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/btn_circle4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:src="@drawable/btn_circle" />
+
+            <TextView
+                android:id="@+id/tv_count4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemName4"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_circle4"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="Closed"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:background="@drawable/ic_wave"
-        app:layout_constraintTop_toBottomOf="@+id/rL_erfxClosed"
+        app:layout_constraintTop_toBottomOf="@+id/ll_top"
         tools:ignore="MissingConstraints" />
+
     <FrameLayout
         android:id="@+id/frameLayout_Erfx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view"/>
+        app:layout_constraintTop_toBottomOf="@id/view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

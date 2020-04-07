@@ -1,4 +1,4 @@
-package com.owescm.client.Adapter
+package com.owescm.client.adapter
 
 
 import androidx.fragment.app.Fragment
