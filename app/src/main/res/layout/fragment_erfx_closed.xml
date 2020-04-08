@@ -1,18 +1,238 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.owescm.client.com.owescm.Fragment.ErfxClosedFragment">
+    android:background="#f8f8f8"
+    tools:context="com.owescm.client.Fragment.ErfxFragment.ErfxClosedFragment">
 
     <TextView
         android:id="@+id/tv_create_erfx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:padding="6dp"
         android:layout_margin="8dp"
-        android:text="eRfx Closed"
         android:gravity="center"
+        android:padding="6dp"
+        android:text="eRfx Closed"
         android:textColor="#000"
-        android:textStyle="bold"/>
-</RelativeLayout>
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_saved_eRFX"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_create_erfx"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_create_erfx"
+        tools:listitem="@layout/item_erfx_live"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_create_erfx">
+
+        <TextView
+            android:id="@+id/tv_eRFX_No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="eRFX No - #5849811178567"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/verticalLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="3dp"
+            android:text="||"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_eRFX_No"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_test_headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="test headline"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/verticalLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/purple_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/img_purple"
+            android:padding="10dp"
+            android:src="@drawable/circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
+
+        <TextView
+            android:id="@+id/txt_erfx_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="17dp"
+            android:text="Erfx Status"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/purple_img"
+            app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
+
+        <TextView
+            android:id="@+id/tv_erfxStatus"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/btn_light_purple"
+            android:gravity="center"
+            android:text="final evaluation open"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/purple_img"
+            app:layout_constraintTop_toBottomOf="@id/txt_erfx_status" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="#f0f0f0"
+            app:layout_constraintTop_toBottomOf="@id/tv_erfxStatus" />
+
+        <TextView
+            android:id="@+id/txt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:text="Location:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view1" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="10dp"
+            android:text="Location"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/txt_location"
+            app:layout_constraintTop_toBottomOf="@id/view1" />
+
+        <TextView
+            android:id="@+id/txt_createdAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Created At:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_location" />
+
+        <TextView
+            android:id="@+id/tv_createdAt_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:text="Date"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/txt_createdAt"
+            app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+        <TextView
+            android:id="@+id/tv_createdAt_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:text="Time"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_createdAt_Date"
+            app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#f0f0f0"
+            app:layout_constraintTop_toBottomOf="@id/tv_createdAt_Date" />
+
+        <TextView
+            android:id="@+id/tv_Security"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Security[Manpower]"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2" />
+
+        <Button
+            android:id="@+id/btn_select"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_purple"
+            android:text="View Details"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_Security" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
