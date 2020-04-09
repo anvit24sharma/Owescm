@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#ffffff">
 
         <TextView
@@ -182,7 +182,7 @@
 
             <EditText
                 android:id="@+id/et_headLine"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:background="@null"
@@ -312,11 +312,11 @@
 
             <EditText
                 android:id="@+id/et_paymentTerms"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -341,17 +341,16 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/btn_form"
-            android:orientation="horizontal"
             android:padding="4dp"
             app:layout_constraintTop_toBottomOf="@id/tv_specialReq">
 
             <EditText
                 android:id="@+id/et_specialReq"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -366,7 +365,8 @@
             android:textColor="#3a3a3a"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_specialReq" />
+            app:layout_constraintTop_toBottomOf="@+id/cl_specialReq"
+            />
 
         <LinearLayout
             android:id="@+id/ll_erfxDocs"
@@ -375,7 +375,7 @@
             android:orientation="horizontal"
             android:weightSum="3"
             app:layout_constraintTop_toBottomOf="@id/tv_erfxDocs"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintStart_toStartOf="parent">
 
             <Button
                 android:id="@+id/btn_choose"
@@ -413,8 +413,6 @@
             android:text="Create"
             android:textColor="#fff"
             android:padding="6dp"
-
-            android:layout_marginBottom="15dp"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
@@ -425,12 +423,13 @@
             android:background="@drawable/btn_create_save"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="15dp"
             android:padding="6dp"
             android:text="saved"
             android:textColor="#fff"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
+            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

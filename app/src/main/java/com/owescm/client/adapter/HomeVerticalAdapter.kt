@@ -8,11 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.owescm.client.activities.*
 import com.owescm.client.Model.HomeModel
 import com.owescm.client.R
+import com.owescm.client.activities.*
 
 class HomeVerticalAdapter(
     private var mContext: Context?,
@@ -157,7 +157,7 @@ class HomeVerticalAdapter(
             }
             rvItemDetails.apply {
                 adapter = homeHorizontalAdapter
-                layoutManager = LinearLayoutManager(context,RecyclerView.HORIZONTAL,false)
+                layoutManager = GridLayoutManager(context,4)
             }
 
         }
