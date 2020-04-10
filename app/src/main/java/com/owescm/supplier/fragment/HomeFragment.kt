@@ -1,4 +1,4 @@
-package com.owescm.supplier
+package com.owescm.supplier.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.owescm.supplier.R
+import com.owescm.supplier.adapter.HomeVerticalAdapter
+import com.owescm.supplier.model.HomeModel
+import com.owescm.supplier.model.ItemDetails
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
@@ -55,28 +59,10 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
         homeList.add(HomeModel("eRfx", 4, erfxDetails))
         homeList.add(HomeModel("eAuction", 3, eAuction))
-        homeList.add(
-            HomeModel(
-                "Primary Evaluation",
-                2,
-                primaryEvaluation
-            )
-        )
-        homeList.add(
-            HomeModel(
-                "Final Evaluation",
-                2,
-                finalEvaluation
-            )
-        )
+        homeList.add(HomeModel("Primary Evaluation", 2, primaryEvaluation))
+        homeList.add(HomeModel("Final Evaluation", 2, finalEvaluation))
         homeList.add(HomeModel("Contract", 2, contract))
-        homeList.add(
-            HomeModel(
-                "Spend Management",
-                2,
-                spendManagement
-            )
-        )
+        homeList.add(HomeModel("Spend Management", 2, spendManagement))
 
         initRecyclerView()
 
@@ -95,3 +81,4 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
 
 }
+

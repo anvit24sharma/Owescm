@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/tv_createErfx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Create  erFx"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Category"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_createErfx" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_security"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_form"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_category">
+
+            <EditText
+                android:id="@+id/et_security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:hint="Security"
+                android:textColorHint="#7e7e7e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/img_security_arrow"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_drop_down"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_subCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="Sub Category"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_security" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_subCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_form"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_subCategory">
+
+            <EditText
+                android:id="@+id/et_security_manpower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:hint="Security[Manpower]"
+                android:textColorHint="#7e7e7e"
+
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/img_security_manpower_arrow"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_drop_down"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="Location"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_subCategory" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_location"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_form"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_location">
+
+            <EditText
+                android:id="@+id/et_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:hint="Eg:DELHI"
+
+                android:textColorHint="#7e7e7e"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_headLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="Location"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_location" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_headLine"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_form"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_headLine">
+
+            <EditText
+                android:id="@+id/et_headLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_termsAndCond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Terms and Conditions"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_headLine"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_contractPeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Contract Period"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_termsAndCond" />
+
+        <LinearLayout
+            android:id="@+id/ll_from_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/tv_contractPeriod">
+
+            <TextView
+                android:id="@+id/tv_From"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_weight="1"
+                android:text="From"
+                android:textColor="#8000a4"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_To"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="To"
+                android:textColor="#8000a4"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_from_to_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/ll_from_to">
+
+            <EditText
+                android:id="@+id/et_from"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_form"
+                android:gravity="center"
+                android:hint="dd-mm-yy"
+                android:textColorHint="#7e7e7e"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/et_to"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_form"
+                android:gravity="center"
+                android:hint="dd-mm-yy"
+                android:textColorHint="#7e7e7e"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_paymentTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Payment Terms"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_from_to_box" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_paymentTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_form"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_paymentTerms">
+
+            <EditText
+                android:id="@+id/et_paymentTerms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_specialReq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Special Requirements"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_paymentTerms" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_specialReq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_form"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_specialReq">
+
+            <EditText
+                android:id="@+id/et_specialReq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_erfxDocs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Erfx Docs"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_specialReq"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_erfxDocs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/tv_erfxDocs"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btn_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_choose"
+                android:text="Choose"
+                android:textAllCaps="true"
+                android:layout_marginTop="10dp"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_chooseFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_form"
+                android:text="No File Chosen"
+                android:textColor="#3a3a3a"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/btn_create_save"
+            android:layout_marginTop="15dp"
+            android:text="Create"
+            android:textColor="#fff"
+            android:padding="6dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_create_save"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:padding="6dp"
+            android:text="saved"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

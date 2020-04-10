@@ -1,4 +1,4 @@
-package com.owescm.supplier
+package com.owescm.supplier.model
 
 
 data class HomeModel(

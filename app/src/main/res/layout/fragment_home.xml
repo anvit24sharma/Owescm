@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment"
+    tools:context=".fragment.HomeFragment"
     android:background="#f0f0f0">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:transitionName="@string/rl1"
         android:id="@+id/rv_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

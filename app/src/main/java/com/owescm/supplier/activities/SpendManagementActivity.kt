@@ -1,12 +1,13 @@
-package com.owescm.supplier
+package com.owescm.supplier.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.owescm.supplier.R
 
-class ForgotPasswordActivity : AppCompatActivity() {
+class SpendManagementActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_password)
+        setContentView(R.layout.activity_spend_management)
     }
 }

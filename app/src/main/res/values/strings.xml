@@ -16,4 +16,8 @@
     <string name="str_json_syntax_mismatch_error">Json syntax mismatch</string>
     <string name="str_bad_input">Bad Input</string>
     <string name="str_unknown_error">Unknown error</string>
+    <string name="rl1">rl1</string>
+    <string name="rl2">rl2</string>
+    <string name="rl3">rl3</string>
+    <string name="rl4">rl4</string>
 </resources>
