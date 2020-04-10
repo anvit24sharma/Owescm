@@ -3,7 +3,7 @@ package com.owescm
 
 import android.app.Application
 import com.owescm.remote.OwescmRemoteEndPoint
-import com.prydepro.pryde.services.remote.NetworkModule
+import com.owescm.remote.NetworkModule
 
 import retrofit2.Retrofit
 

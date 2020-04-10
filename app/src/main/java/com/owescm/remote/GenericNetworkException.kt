@@ -1,7 +1,7 @@
 package com.owescm.remote
 
 import android.content.Context
-import com.owescm.client.R
+import com.owescm.supplier.R
 import java.io.IOException
 
 class GenericNetworkException(

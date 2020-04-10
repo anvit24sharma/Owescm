@@ -1,24 +1,24 @@
-package com.owescm.client
+package com.owescm.supplier
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
-class LoginActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_sign_up)
 
-        txt_SignUp.setOnClickListener {
-            startActivity((Intent(this, SignUpActivity::class.java)))
+        txt_SignIn.setOnClickListener {
+            startActivity((Intent(this, MainActivity::class.java)))
             finish()
         }
-        btn_login.setOnClickListener {
+        btn_SignUp.setOnClickListener {
             startActivity((Intent(this, MainActivity::class.java)))
-
+            finish()
         }
-
     }
 }

@@ -1,7 +1,7 @@
-package com.owescm.client
+package com.owescm.supplier
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class ForgotPasswordActivity : AppCompatActivity() {
 

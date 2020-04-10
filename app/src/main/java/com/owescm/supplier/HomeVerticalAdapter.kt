@@ -1,4 +1,4 @@
-package com.owescm.client
+package com.owescm.supplier
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -33,7 +33,7 @@ class HomeVerticalAdapter(
 
         private lateinit var homeHorizontalAdapter: HomeHorizontalAdapter
 
-        fun setData(homeModel:HomeModel, position: Int) {
+        fun setData(homeModel: HomeModel, position: Int) {
             tvMenuTitle.text = homeModel.menuTitle
 
             homeHorizontalAdapter = homeModel.let {

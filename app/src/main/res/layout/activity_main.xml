@@ -7,30 +7,10 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-<!--    <RelativeLayout -->
-<!--        android:id="@+id/main_activity"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-
-<!--        >-->
-
-<!--        <androidx.viewpager.widget.ViewPager-->
-<!--            android:id="@+id/viewpager"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_above="@+id/menu_bottom" />-->
-
-<!--        <com.ismaeldivita.chipnavigation.ChipNavigationBar-->
-<!--            android:id="@+id/menu_bottom"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:background="#ffffff"-->
-<!--            android:elevation="16dp"-->
-<!--            android:padding="8dp"-->
-<!--            app:cnb_menuResource="@menu/bottom_menu"-->
-<!--            tools:ignore="MissingConstraints" />-->
-<!--    </RelativeLayout>-->
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
