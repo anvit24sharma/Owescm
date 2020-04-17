@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:text="eRFX No - #5849811178567"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
         android:layout_marginTop="3dp"
         android:text="||"
         android:textColor="#000000"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/tv_eRFX_No"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,35 +39,29 @@
         android:layout_marginTop="8dp"
         android:text="test headline"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" 
         app:layout_constraintStart_toEndOf="@id/verticalLine"/>
-
-
-
-
-
     <ImageView
         android:id="@+id/purple_img"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_margin="15dp"
         android:background="@drawable/img_purple"
         android:padding="10dp"
         android:src="@drawable/circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
-
     <TextView
         android:id="@+id/txt_erfx_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="15dp"
         android:text="Erfx Status"
         android:textColor="#000000"
-        android:textSize="19sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/purple_img"
         app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
@@ -75,15 +69,15 @@
     <TextView
         android:id="@+id/tv_erfxStatus"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/btn_light_purple"
         android:gravity="center"
         android:text="final evaluation open"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/purple_img"
         app:layout_constraintTop_toBottomOf="@id/txt_erfx_status" />
 
@@ -92,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
         android:background="#f0f0f0"
         app:layout_constraintTop_toBottomOf="@id/tv_erfxStatus" />
@@ -104,7 +98,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:text="Location:"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +111,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="10dp"
         android:text="Location"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="normal"
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/view1"
@@ -129,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Created At:"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,10 +135,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
-        android:text="Date"
-        android:textSize="14sp"
+        android:text="2020-03-23"
+        android:textSize="12sp"
         android:textStyle="normal"
-        android:textColor="#000000"
+        android:textColor="#f57083"
         app:layout_constraintTop_toBottomOf="@id/tv_location"
         app:layout_constraintStart_toEndOf="@id/txt_createdAt"
         />
@@ -154,10 +148,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
-        android:text="Time"
-        android:textSize="14sp"
+        android:text="2020-03-23"
+        android:textSize="12sp"
         android:textStyle="normal"
-        android:textColor="#000000"
+        android:textColor="#f57083"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_location"
         app:layout_constraintStart_toEndOf="@id/tv_createdAt_Date"
@@ -167,9 +161,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:background="#f0f0f0"
+        android:background="#f8f8f8"
         app:layout_constraintTop_toBottomOf="@id/tv_createdAt_Date" />
 
     <TextView
@@ -179,22 +173,24 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="Security[Manpower]"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textStyle="italic"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view2"
         />
     <Button
         android:id="@+id/btn_select"
-        android:layout_width="180dp"
+        android:layout_width="160dp"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/btn_purple"
         android:text="View Details"
-        android:textSize="16sp"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:textStyle="normal"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_Security" />

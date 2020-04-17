@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="Home"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="Notifications"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="eRFX"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="Primary Evaluation"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="eAuction"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="Final Evaluation"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="Contracts"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:textColor="#000"
+        android:text="Spend Management"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+
+        android:textColor="#000"
+        android:text="Support Center"
+        android:gravity="center"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/arrow_drop_down"/>
+
+</LinearLayout>

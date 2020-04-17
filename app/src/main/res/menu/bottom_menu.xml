@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cnb_unselectedColor="#666666">
+    app:cnb_unselectedColor="#666666"
+    >
     <item
         android:id="@+id/home"
         android:title="Home"
-        android:icon="@drawable/home"
         app:cnb_iconColor="#8000a4"/>
 
     <item
-        android:id="@+id/profile"
-        android:title="Profile"
-        android:icon="@drawable/profile"
-        app:cnb_iconColor="#8000a4"/>
+        android:id="@+id/notifications"
+        android:title="Notifications"
+        />
+    <item
+        android:id="@+id/eRFX"
+        android:title="eRFX"
+        />
+    <item
+        android:id="@+id/primaryEvaluation"
+        android:title="Primary Evaluation"
+        />
+    <item
+        android:id="@+id/eAuction"
+        android:title="eAuction"
+        />
+    <item
+        android:id="@+id/finalEvaluation"
+        android:title="Final Evaluation"
+        />
+    <item
+        android:id="@+id/contracts"
+        android:title="Contracts"
+        />
+    <item
+        android:id="@+id/spendManagement"
+        android:title="Spend Management"
+        />
 
     <item
-        android:id="@+id/settings"
-        android:title="Settings"
-        android:icon="@drawable/settings"
-        app:cnb_iconColor="#8000a4"/>
+        android:id="@+id/supportCenter"
+        android:title="Support Center"
+        />
+
+
+
+
+
+<!--    <item-->
+<!--        android:id="@+id/profile"-->
+<!--        android:title="Profile"-->
+<!--        android:icon="@drawable/profile"-->
+<!--        app:cnb_iconColor="#8000a4"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/settings"-->
+<!--        android:title="Settings"-->
+<!--        app:cnb_iconColor="#8000a4"/>-->
 
 </menu>

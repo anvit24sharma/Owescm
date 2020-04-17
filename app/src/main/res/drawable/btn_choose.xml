@@ -8,8 +8,8 @@
         android:width="1dp"/>
     <gradient
         android:startColor="#fff"
-        android:centerColor="#b1b1b1"
-        android:endColor="#3a3a3a"
+        android:centerColor="#f0f0f0"
+        android:endColor="#fff"
     />
 
 
