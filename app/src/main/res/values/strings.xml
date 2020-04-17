@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Owescm Supplier</string>
+    <string name="email">Email</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Network ErrorDTO Message -->
+    <string name="str_internet_connection_error">Internet connection error</string>
+    <string name="str_internal_server_error">internal_server_error</string>
+    <string name="str_timeout_error">Tempory network error</string>
+    <string name="str_user_unauthorized_error">User not authorized error</string>
+    <string name="str_api_not_found_error">Api not found</string>
+    <string name="str_json_syntax_mismatch_error">Json syntax mismatch</string>
+    <string name="str_bad_input">Bad Input</string>
+    <string name="str_unknown_error">Unknown error</string>
+    <string name="rl1">rl1</string>
+    <string name="rl2">rl2</string>
+    <string name="rl3">rl3</string>
+    <string name="rl4">rl4</string>
 </resources>

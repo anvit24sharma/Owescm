@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlt_nav_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:padding="4dp"-->
+    <!--        android:src="@drawable/logo"-->
+    <!--        />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="4dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="User Name"-->
+    <!--        android:textColor="#8000a4"-->
+    <!--        android:textSize="22sp"-->
+    <!--        android:textStyle="normal" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="email Id"
+        android:textColor="#8000a4"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+
+</LinearLayout>
+

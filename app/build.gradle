@@ -21,17 +21,56 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "ON_DEBUG_MODE", "true"
+            applicationIdSuffix ".debug"
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
     }
 
+}
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//    implementation 'com.google.android.material:material:1.0.0'
+    androidTestImplementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
+    //chuck for tracking network calls
+    implementation('com.readystatesoftware.chuck:library:1.1.0') {
+        exclude group: 'com.google.code.gson', module: 'gson'
+
+        //Chip Navigation bar
+        implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+
+        //drawer layout
+        implementation 'androidx.drawerlayout:drawerlayout:1.0.0'
+
+        //side nav
+        implementation 'com.google.android.material:material:1.1.0-alpha09'
+
+    }
 }
