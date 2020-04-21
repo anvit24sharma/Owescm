@@ -6,21 +6,13 @@
     android:layout_height="match_parent"
     android:background="#fff"
     tools:context=".activities.LoginActivity">
-
-    <TextView
-        android:id="@+id/already"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Create Your Account"
-        android:textColor="#8000a4"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/img_wave"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_logo" />
-
+        android:src="@drawable/ic_wave"/>
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="100dp"
@@ -29,21 +21,37 @@
         android:background="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/img_wave" />
+
+    <TextView
+        android:id="@+id/already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Already have an account?"
+        android:textColor="#8000a4"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="35dp"
         android:background="@drawable/btn_edit_text_ll"
         android:gravity="center"
         android:hint="Email"
         android:textColorHint="#8000a4"
         android:padding="4dp"
-        app:layout_constraintTop_toBottomOf="@id/img_logo" />
+        app:layout_constraintTop_toBottomOf="@id/already" />
 
     <EditText
         android:id="@+id/et_password"
@@ -94,7 +102,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
-        android:text="Create an Account"
+        android:text="Create your new account"
+        android:padding="10dp"
         android:textColor="#000"
         android:textSize="18sp"
         android:textStyle="italic"

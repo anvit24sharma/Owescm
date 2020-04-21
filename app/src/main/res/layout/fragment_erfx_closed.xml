@@ -29,7 +29,7 @@
         android:background="#fff"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/tv_create_erfx"
-        tools:listitem="@layout/item_erfx_live"
+        tools:listitem="@layout/item_erfx_closed"
 
         />
 

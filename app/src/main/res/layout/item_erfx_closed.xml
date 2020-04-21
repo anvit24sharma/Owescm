@@ -2,11 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginEnd="4dp"
-    android:layout_marginTop="10dp"
-    android:elevation="2dp">
+    android:layout_height="270dp"
+    android:background="#f0f0f0"
+ >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        app:cardCornerRadius="0dp"
+        android:background="#fff">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
     <TextView
         android:id="@+id/tv_eRFX_No"
         android:layout_width="wrap_content"
@@ -122,6 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:text="Created At:"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -134,11 +147,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="6dp"
         android:text="2020-03-23"
         android:textSize="12sp"
         android:textStyle="normal"
-        android:textColor="#f57083"
+        android:textColor="#ff0000"
         app:layout_constraintTop_toBottomOf="@id/tv_location"
         app:layout_constraintStart_toEndOf="@id/txt_createdAt"
         />
@@ -147,11 +160,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="6dp"
         android:text="2020-03-23"
         android:textSize="12sp"
         android:textStyle="normal"
-        android:textColor="#f57083"
+        android:textColor="#ff0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_location"
         app:layout_constraintStart_toEndOf="@id/tv_createdAt_Date"
@@ -194,5 +207,6 @@
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_Security" />
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

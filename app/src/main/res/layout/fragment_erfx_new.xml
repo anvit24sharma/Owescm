@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#f0f0f0">
+    android:background="#f0f0f0"
+    android:scrollbars="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -183,7 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:padding="8dp"
             android:text="Terms and Conditions"
             android:textColor="#000"
@@ -342,11 +343,12 @@
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_specialReq" />
+
         <TextView
             android:id="@+id/tv_invited_suppliers_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="6dp"
             android:layout_marginTop="20dp"
             android:padding="8dp"
             android:text="Invited suppliers list"
@@ -355,6 +357,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view" />
+
         <LinearLayout
             android:id="@+id/ll_erfxDocs"
             android:layout_width="match_parent"
@@ -368,17 +371,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_erfxDocs"
             tools:ignore="MissingConstraints">
 
-            <Button
-                android:id="@+id/btn_choose"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_choose"
-                android:text="Choose"
-                android:textAllCaps="true"
-                android:textColor="#000"
-                android:textSize="16sp" />
+
 
             <EditText
                 android:id="@+id/et_chooseFile"
@@ -388,6 +381,17 @@
                 android:layout_weight="2"
                 android:text="No File Chosen"
                 android:textColor="#000000"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/btn_choose"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_choose"
+                android:text="Choose"
+                android:textAllCaps="true"
+                android:textColor="#000"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -418,20 +422,22 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
+
         <Button
             android:id="@+id/btn_invite"
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="35dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_invite"
+            android:elevation="2dp"
             android:fontFamily="sans-serif"
             android:text="Invite your suppliers"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="14sp"
-            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
 
@@ -439,88 +445,111 @@
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            app:layout_constraintTop_toBottomOf="@id/btn_invite"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginTop="20dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_invite" />
 
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    tools:itemCount="4"
-    android:visibility="gone"
-    app:layout_constraintTop_toBottomOf="@id/tv_invited_suppliers_list"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:listitem="@layout/item_erfx_new_invited_supplier_list"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_invitedFriendsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_invited_suppliers_list"
+            tools:itemCount="4"
+            android:visibility="gone"
+            tools:listitem="@layout/item_erfx_new_invited_supplier_list" />
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
-            app:cardCornerRadius="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/tv_invited_suppliers_list">
+            app:cardCornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_invited_suppliers_list">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp">
-
+                android:layout_height="100dp"
+                >
 
                 <TextView
-                    android:id="@+id/tv_supplierName"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="#343A40"
+                    android:id="@+id/txt"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="4dp"
                     android:padding="2dp"
                     android:text="Supplier Name:%s"
-                    android:textColor="#ffffff"
+                    android:textColor="#000"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/tv_supplierContactPersonName"
+                    android:id="@+id/tv_ContactPersonName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/nova"
                     android:text="Contact person name:%s"
                     android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/nova"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_supplierName" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_MobileNo"
+                    app:layout_constraintStart_toEndOf="@+id/txt"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Name" />
 
                 <TextView
-                    android:id="@+id/tv_supplierMobileNo"
+                    android:id="@+id/tv_MobileNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/nova"
+
                     android:text="Supplier mobile number :%s"
                     android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/nova"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_supplierContactPersonName" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_Email"
+                    app:layout_constraintStart_toEndOf="@+id/txt"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ContactPersonName" />
 
                 <TextView
-                    android:id="@+id/tv_supplierEmail"
+                    android:id="@+id/tv_Email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="6dp"
+
+                    android:fontFamily="@font/nova"
                     android:text="Supplier email:%s"
                     android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/nova"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_supplierMobileNo" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt"
+                    app:layout_constraintTop_toBottomOf="@id/tv_MobileNo" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+           app:layout_constraintTop_toBottomOf="@id/card2"
+            app:layout_constraintStart_toStartOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

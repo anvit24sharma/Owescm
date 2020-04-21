@@ -5,9 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff">
+    <ImageView
+        android:id="@+id/img_wave"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_wave"/>
 
-
-    <TextViewfor
+    <TextView
         android:id="@+id/already"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +21,7 @@
         android:gravity="center"
         android:text="Create Your Account"
         android:textColor="#8000a4"
+        android:fontFamily="sans-serif-condensed-medium"
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,17 +33,18 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-
         android:background="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintTop_toBottomOf="@id/img_wave" />
 
     <LinearLayout
         android:id="@+id/ll_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:weightSum="6"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@id/btn_SignUp"
         app:layout_constraintTop_toBottomOf="@id/img_logo">
 
@@ -49,8 +57,9 @@
             android:background="@drawable/btn_edit_text_ll"
             android:gravity="center"
             android:hint="Name"
+            android:layout_weight="1"
             android:padding="4dp"
-            android:textColorHint="#b1b1b1" />
+            android:textColorHint="#8000a4" />
 
         <EditText
             android:id="@+id/et_designation"
@@ -63,7 +72,9 @@
             android:gravity="center"
             android:hint="Designation"
             android:padding="4dp"
-            android:textColorHint="#b1b1b1" />
+            android:textColorHint="#8000a4"
+            android:layout_weight="1"
+            />
 
         <EditText
             android:id="@+id/et_email"
@@ -76,7 +87,9 @@
             android:gravity="center"
             android:hint="Email ID"
             android:padding="4dp"
-            android:textColorHint="#8000a4" />
+            android:textColorHint="#8000a4"
+            android:layout_weight="1"
+            />
 
         <EditText
             android:id="@+id/et_mobile_no"
@@ -89,7 +102,9 @@
             android:gravity="center"
             android:hint="Mobile number"
             android:padding="4dp"
-            android:textColorHint="#8000a4" />
+            android:textColorHint="#8000a4"
+            android:layout_weight="1"
+            />
 
         <EditText
             android:id="@+id/et_password"
@@ -102,7 +117,9 @@
             android:gravity="center"
             android:hint="Password"
             android:padding="4dp"
-            android:textColorHint="#8000a4" />
+            android:textColorHint="#8000a4"
+            android:layout_weight="1"
+            />
 
         <EditText
             android:id="@+id/et_confirm_password"
@@ -115,7 +132,9 @@
             android:gravity="center"
             android:hint="Confirm Password"
             android:padding="4dp"
-            android:textColorHint="#8000a4" />
+            android:textColorHint="#8000a4"
+            android:layout_weight="1"
+            />
 
     </LinearLayout>
 

@@ -13,9 +13,9 @@
         android:gravity="center"
         android:padding="6dp"
         android:text="All Saved erfx"
-        android:textColor="#8000a4"
-        android:textSize="20sp"
-        android:textStyle="normal"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
