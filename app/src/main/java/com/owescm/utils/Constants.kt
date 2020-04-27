@@ -8,6 +8,6 @@ class Constants {
         const val USER_TOKEN = "userToken"
 
         const val ID = "id"
-        const val BASE_URL = ""
+        const val BASE_URL = "https://owescm.com"
     }
 }

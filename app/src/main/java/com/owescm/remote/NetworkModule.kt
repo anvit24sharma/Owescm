@@ -1,4 +1,4 @@
-package com.prydepro.pryde.services.remote
+package com.owescm.remote
 
 import android.content.Context
 import com.google.gson.FieldNamingPolicy
@@ -6,9 +6,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.owescm.OwescmApplication
 import com.owescm.client.BuildConfig.DEBUG
-import com.owescm.remote.AuthInterceptor
-import com.owescm.remote.ErrorHandlerInterceptor
-import com.owescm.remote.OwescmRemoteEndPoint
 import com.owescm.utils.Constants
 import com.owescm.utils.Constants.Companion.BASE_URL
 import com.readystatesoftware.chuck.BuildConfig

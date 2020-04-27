@@ -1,4 +1,4 @@
-package com.owescm.client.Model
+package com.owescm.client.model
 
 
 data class HomeModel(

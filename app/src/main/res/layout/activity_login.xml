@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Create Your Account"
+        android:text="@string/create_your_account"
         android:textColor="#8000a4"
         android:textSize="18sp"
         android:textStyle="normal"
@@ -40,7 +40,7 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/btn_edit_text_ll"
         android:gravity="center"
-        android:hint="Email"
+        android:hint="@string/email"
         android:textColorHint="#8000a4"
         android:padding="4dp"
         app:layout_constraintTop_toBottomOf="@id/img_logo" />
@@ -55,8 +55,7 @@
         android:background="@drawable/btn_edit_text_ll"
         android:gravity="center"
         android:textColorHint="#8000a4"
-
-        android:hint="Password"
+        android:hint="@string/password"
         android:padding="4dp"
         app:layout_constraintTop_toBottomOf="@id/et_email" />
 
@@ -68,7 +67,7 @@
         android:layout_marginEnd="35dp"
         android:background="#fff"
         android:padding="5dp"
-        android:text="Forgot Password?"
+        android:text="@string/forgot_password"
         android:textColor="#b1b1b1"
         android:textSize="14sp"
         android:textStyle="italic"
@@ -85,7 +84,7 @@
         android:background="@drawable/my_btn"
         android:gravity="center"
         android:padding="4dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textAllCaps="true"
         android:textColor="#ffffff"
         app:layout_constraintTop_toBottomOf="@id/txt_forgot_password" />
@@ -94,7 +93,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
-        android:text="Create an Account"
+        android:text="@string/create_your_account"
         android:textColor="#000"
         android:textSize="18sp"
         android:textStyle="italic"

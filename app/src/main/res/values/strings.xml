@@ -20,4 +20,8 @@
     <string name="rl2">rl2</string>
     <string name="rl3">rl3</string>
     <string name="rl4">rl4</string>
+    <string name="create_your_account">Create Your Account</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
 </resources>

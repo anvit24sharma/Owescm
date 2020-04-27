@@ -3,7 +3,8 @@ package com.owescm
 
 import android.app.Application
 import com.owescm.remote.OwescmRemoteEndPoint
-import com.prydepro.pryde.services.remote.NetworkModule
+import com.owescm.services.repository.OwescmRepository
+import com.owescm.remote.NetworkModule
 
 import retrofit2.Retrofit
 
@@ -13,9 +14,11 @@ class OwescmApplication : Application() {
 
     companion object{
         private lateinit var retrofit: Retrofit
-        private lateinit var prydeRemoteEndPoint: OwescmRemoteEndPoint
+        private lateinit var owescmRemoteEndPoint: OwescmRemoteEndPoint
 
-    //    fun getPrydeRepository(): PrydeRepository = PrydeRepository(prydeRemoteEndPoint)
+        var apiKey = "97d2b7920b5ccbe36878cea391233299"
+        var userType ="2"
+        fun getOwescmRepository(): OwescmRepository = OwescmRepository(owescmRemoteEndPoint)
 
         fun getApplicationContext(): OwescmApplication {
             return application!!
@@ -26,7 +29,7 @@ class OwescmApplication : Application() {
         super.onCreate()
         retrofit = NetworkModule.getRetrofit(baseContext)
         application = this
-        prydeRemoteEndPoint = retrofit.create(OwescmRemoteEndPoint::class.java)
+        owescmRemoteEndPoint = retrofit.create(OwescmRemoteEndPoint::class.java)
     }
 
 }

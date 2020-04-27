@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.owescm.client.adapter.HomeVerticalAdapter
-import com.owescm.client.Model.HomeModel
-import com.owescm.client.Model.ItemDetails
+import com.owescm.client.model.HomeModel
+import com.owescm.client.model.ItemDetails
 import com.owescm.client.R
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
