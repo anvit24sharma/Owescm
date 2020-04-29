@@ -2,7 +2,9 @@ package com.owescm.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.google.gson.Gson
 import com.owescm.remote.ErrorCodes
 import com.owescm.remote.ErrorHandler
 import com.owescm.services.model.base.DataWrapper
@@ -45,6 +47,7 @@ object NetworkUtils {
                 }
 
                 override fun onResponse(call: Call<RESPONSE>, response: Response<RESPONSE>) {
+//                    Log.i("j", Gson().toJson(response))
                     when {
                         response.isSuccessful -> result.postValue(
                             DataWrapper(
