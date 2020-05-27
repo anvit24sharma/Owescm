@@ -2,10 +2,13 @@ package com.owescm.services.repository
 
 import androidx.lifecycle.MutableLiveData
 import com.owescm.client.model.CountModel
+import com.owescm.client.model.ErfxModel
 import com.owescm.client.model.LoginResponse
 import com.owescm.remote.OwescmRemoteEndPoint
 import com.owescm.services.model.base.DataWrapper
 import com.owescm.utils.NetworkUtils.makeNetworkCall
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
 
 class OwescmRepository(private val remoteApiEndPoint: OwescmRemoteEndPoint) {
@@ -22,5 +25,13 @@ class OwescmRepository(private val remoteApiEndPoint: OwescmRemoteEndPoint) {
         }
     }
 
+    fun createErfx(
+        erfxRequest: MutableMap<String, RequestBody?>,
+        body: MultipartBody.Part
+    ): MutableLiveData<DataWrapper<ErfxModel>> {
+        return makeNetworkCall {
+            retrofitCall = remoteApiEndPoint.createErfx(erfxRequest,body)
+        }
+    }
 
 }
