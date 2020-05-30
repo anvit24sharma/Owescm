@@ -1,9 +1,7 @@
 package com.owescm.services.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.owescm.client.model.CountModel
-import com.owescm.client.model.ErfxModel
-import com.owescm.client.model.LoginResponse
+import com.owescm.client.model.*
 import com.owescm.remote.OwescmRemoteEndPoint
 import com.owescm.services.model.base.DataWrapper
 import com.owescm.utils.NetworkUtils.makeNetworkCall
@@ -25,12 +23,27 @@ class OwescmRepository(private val remoteApiEndPoint: OwescmRemoteEndPoint) {
         }
     }
 
-    fun createErfx(
-        erfxRequest: MutableMap<String, RequestBody?>,
-        body: MultipartBody.Part
-    ): MutableLiveData<DataWrapper<ErfxModel>> {
+    fun createErfx(erfxRequest: MutableMap<String, RequestBody?>, body: MultipartBody.Part): MutableLiveData<DataWrapper<ErfxModel>> {
         return makeNetworkCall {
             retrofitCall = remoteApiEndPoint.createErfx(erfxRequest,body)
+        }
+    }
+
+    fun getErfxLiveList(erfxLiveRequest: MutableMap<String, RequestBody?>): MutableLiveData<DataWrapper<ErfxLiveListResponse>> {
+        return makeNetworkCall {
+            retrofitCall = remoteApiEndPoint.getErfxLiveList(erfxLiveRequest)
+        }
+    }
+
+    fun getErfxSavedList(erfxSavedRequest: MutableMap<String, RequestBody?>): MutableLiveData<DataWrapper<ErfxSavedListResponse>> {
+        return makeNetworkCall {
+            retrofitCall = remoteApiEndPoint.getErfxSavedist(erfxSavedRequest)
+        }
+    }
+
+    fun getErfxOpenPrimaryEvaluationList(openPrimaryEvaluationRequest: MutableMap<String, RequestBody?>): MutableLiveData<DataWrapper<OpenPrimaryEvaluationListResponse>> {
+        return makeNetworkCall {
+            retrofitCall = remoteApiEndPoint.getOpenPrimaryEvaluationList(openPrimaryEvaluationRequest)
         }
     }
 

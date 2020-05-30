@@ -1,5 +1,8 @@
 package com.owescm.utils
 
+import okhttp3.MediaType
+import okhttp3.RequestBody
+
 class Constants {
     companion object {
 
@@ -13,5 +16,10 @@ class Constants {
         const val DESIGNATION = "designation"
         const val USER_ID = "user_id"
         const val BASE_URL = "https://owescm.com"
+
+        fun toRequestBody(value: String?): RequestBody? {
+            return RequestBody.create(MediaType.parse("multipart/form-data"), value)
+        }
+
     }
 }
