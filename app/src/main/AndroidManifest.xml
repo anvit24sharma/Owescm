@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SpendManagementActivity"></activity>
+        <activity android:name=".activities.PrimaryEvaluationOpenSelectButtonActivity"></activity>
+        <activity android:name=".activities.SpendManagementActivity" />
         <activity android:name=".activities.FinalEvaluationActivity" />
         <activity android:name=".activities.PrimaryEvaluationActivity" />
         <activity android:name=".activities.ContractActivity" />
