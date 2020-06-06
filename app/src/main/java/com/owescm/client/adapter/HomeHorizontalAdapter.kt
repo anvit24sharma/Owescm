@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.owescm.client.Model.ItemDetails
+import com.owescm.client.model.ItemDetails
 import com.owescm.client.R
 
 

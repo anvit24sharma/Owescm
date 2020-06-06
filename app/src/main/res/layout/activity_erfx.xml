@@ -8,200 +8,199 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
 
-    <LinearLayout
-        android:id="@+id/ll_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-        <RelativeLayout
-            android:id="@+id/rL_erfxNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="4dp"
-            android:gravity="center"
-            style="@style/MaterialAnimations"
-            android:transitionName="ErfxNew"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/btn_circle1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="#ffffff"
-                android:src="@drawable/btn_circle" />
-
-            <TextView
-                android:id="@+id/tv_count1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:text="+"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/itemName1"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_circle1"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="New"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-
-            android:id="@+id/rL_erfxSaved"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="4dp"
-            android:gravity="center"
-            style="@style/MaterialAnimations"
-            android:transitionName="ErfxSaved"
-            android:layout_weight="1"
-            >
-
-            <ImageView
-                android:id="@+id/btn_circle2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="#ffffff"
-                android:src="@drawable/btn_circle" />
-
-            <TextView
-                android:id="@+id/tv_count2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/itemName2"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_circle2"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="Saved"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rL_erfxLive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="4dp"
-            android:gravity="center"
-            style="@style/MaterialAnimations"
-            android:transitionName="ErfxLive"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/btn_circle3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="#ffffff"
-                android:src="@drawable/btn_circle" />
-
-            <TextView
-                android:id="@+id/tv_count3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/itemName3"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_circle3"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="Live"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rL_erfxClosed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="4dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            style="@style/MaterialAnimations"
-            android:transitionName="ErfxClosed"
-            >
-
-            <ImageView
-                android:id="@+id/btn_circle4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="#ffffff"
-                android:src="@drawable/btn_circle" />
-
-            <TextView
-                android:id="@+id/tv_count4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/itemName4"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_circle4"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="Closed"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-        </RelativeLayout>
-    </LinearLayout>
-
-    <View
+    <androidx.cardview.widget.CardView
         android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_wave"
-        app:layout_constraintTop_toBottomOf="@+id/ll_top"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rL_erfxNew"
+                style="@style/MaterialAnimations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4dp"
+                android:transitionName="ErfxNew">
+
+                <ImageView
+                    android:id="@+id/btn_circle1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#ffffff"
+                    android:src="@drawable/btn_circle" />
+
+                <TextView
+                    android:id="@+id/tv_count1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/itemName1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_circle1"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="New"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/rL_erfxSaved"
+                style="@style/MaterialAnimations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4dp"
+                android:transitionName="ErfxSaved">
+
+                <ImageView
+                    android:id="@+id/btn_circle2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#ffffff"
+                    android:src="@drawable/btn_circle" />
+
+                <TextView
+                    android:id="@+id/tv_count2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/itemName2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_circle2"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="Saved"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rL_erfxLive"
+                style="@style/MaterialAnimations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4dp"
+                android:transitionName="ErfxLive">
+
+                <ImageView
+                    android:id="@+id/btn_circle3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#ffffff"
+                    android:src="@drawable/btn_circle" />
+
+                <TextView
+                    android:id="@+id/tv_count3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/itemName3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_circle3"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="Live"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rL_erfxClosed"
+                style="@style/MaterialAnimations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4dp"
+                android:transitionName="ErfxClosed">
+
+                <ImageView
+                    android:id="@+id/btn_circle4"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#ffffff"
+                    android:src="@drawable/btn_circle" />
+
+                <TextView
+                    android:id="@+id/tv_count4"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/itemName4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_circle4"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="Closed"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <FrameLayout
         android:id="@+id/frameLayout_Erfx"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

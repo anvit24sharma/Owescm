@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#f0f0f0"
-    android:scrollbars="vertical">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff">
+        android:layout_height="match_parent"
+        android:background="#F5E6FE">
 
         <TextView
             android:id="@+id/tv_createErfx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:background="#ffffff"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             android:padding="8dp"
             android:text="Create  erFx"
             android:textColor="#000"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/tv_category"
@@ -33,43 +31,32 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/nova"
             android:text="Category"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_createErfx" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_security"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/btn_form"
             android:orientation="horizontal"
+            android:padding="4dp"
             app:layout_constraintTop_toBottomOf="@id/tv_category">
 
-            <EditText
-                android:id="@+id/et_security"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:hint="Security"
-                android:textColorHint="#7e7e7e"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/img_security_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/arrow_drop_down"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -77,47 +64,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/nova"
+            android:layout_marginTop="18dp"
             android:text="Sub Category"
-
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_security" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_subCategory"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/btn_form"
             android:orientation="horizontal"
+            android:padding="4dp"
             app:layout_constraintTop_toBottomOf="@id/tv_subCategory">
 
-            <EditText
-                android:id="@+id/et_security_manpower"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerSubCategory"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="@null"
-                android:hint="Security[Manpower]"
-                android:textColorHint="#7e7e7e"
-
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/img_security_manpower_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/arrow_drop_down"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -125,73 +98,92 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/nova"
+            android:layout_marginTop="18dp"
+            android:padding="6dp"
             android:text="Location"
-
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_subCategory" />
 
-
-        <EditText
-            android:id="@+id/et_loc"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_location"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/btn_form"
-            android:hint="Eg:DELHI"
             android:orientation="horizontal"
             android:padding="4dp"
-            android:textColorHint="#8000a4"
-            app:layout_constraintTop_toBottomOf="@id/tv_location" />
+            app:layout_constraintTop_toBottomOf="@id/tv_location">
 
+            <EditText
+                android:id="@+id/et_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Eg:DELHI"
+                android:padding="4dp"
+                android:textColorHint="#7e7e7e"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tv_headLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/nova"
+            android:layout_marginTop="18dp"
             android:text="Headline"
-            android:textColor="#000000"
-
-            android:textSize="16sp"
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_loc" />
+            app:layout_constraintTop_toBottomOf="@+id/cl_location" />
 
-
-        <EditText
-            android:id="@+id/et_headLine"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_headLine"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/btn_form"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_headLine"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_headLine">
 
-            />
+            <EditText
+                android:id="@+id/et_headLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
 
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tv_termsAndCond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
+            android:background="#ffffff"
+            android:gravity="center"
             android:padding="8dp"
             android:text="Terms and Conditions"
             android:textColor="#000"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_headLine" />
+            app:layout_constraintTop_toBottomOf="@id/cl_headLine"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/tv_contractPeriod"
@@ -199,11 +191,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/nova"
             android:text="Contract Period"
-            android:textColor="#000000"
-            android:textSize="16sp"
-
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_termsAndCond" />
 
@@ -222,7 +212,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="17dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/nova"
                 android:text="From"
                 android:textColor="#8000a4"
                 android:textSize="14sp" />
@@ -232,9 +221,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/nova"
                 android:text="To"
-
                 android:textColor="#8000a4"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -248,7 +235,7 @@
             android:weightSum="2"
             app:layout_constraintTop_toBottomOf="@id/ll_from_to">
 
-            <EditText
+            <TextView
                 android:id="@+id/et_from"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -257,11 +244,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_form"
                 android:gravity="center"
-                android:hint="dd-mm-yy"
-                android:textColorHint="#7e7e7e"
-                tools:ignore="MissingConstraints" />
+                android:hint="yyyy-mm-dd"
+                android:textColor="#000000"
+                android:textColorHint="#7e7e7e" />
 
-            <EditText
+            <TextView
                 android:id="@+id/et_to"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -270,9 +257,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_form"
                 android:gravity="center"
-                android:hint="dd-mm-yy"
-                android:textColorHint="#7e7e7e"
-                tools:ignore="MissingConstraints" />
+                android:hint="yyyy-mm-dd"
+                android:textColor="#000000"
+                android:textColorHint="#7e7e7e" />
         </LinearLayout>
 
         <TextView
@@ -281,27 +268,35 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/nova"
             android:text="Payment Terms"
-            android:textColor="#000000"
-            android:textSize="16sp"
-
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_from_to_box" />
 
-
-        <EditText
-            android:id="@+id/et_paymentTerms"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_paymentTerms"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
-
             android:background="@drawable/btn_form"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_paymentTerms" />
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_paymentTerms">
 
+            <EditText
+                android:id="@+id/et_paymentTerms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tv_specialReq"
@@ -309,26 +304,34 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/nova"
             android:text="Special Requirements"
-            android:textColor="#000000"
-            android:textSize="16sp"
-
+            android:textColor="#3a3a3a"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_paymentTerms" />
+            app:layout_constraintTop_toBottomOf="@+id/cl_paymentTerms" />
 
-
-        <EditText
-            android:id="@+id/et_specialReq"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_specialReq"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/btn_form"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_specialReq" />
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_specialReq">
 
+            <EditText
+                android:id="@+id/et_specialReq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tv_erfxDocs"
@@ -336,57 +339,27 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/nova"
-            android:text="eRFX Docs"
-            android:textColor="#000000"
-            android:textSize="16sp"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_specialReq" />
-
-        <TextView
-            android:id="@+id/tv_invited_suppliers_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="20dp"
-            android:padding="8dp"
-            android:text="Invited suppliers list"
-            android:textColor="#000"
+            android:text="Erfx Docs"
+            android:textColor="#3a3a3a"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/cl_specialReq" />
 
         <LinearLayout
             android:id="@+id/ll_erfxDocs"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/btn_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            app:layout_constraintTop_toBottomOf="@id/tv_erfxDocs"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_erfxDocs">
 
-
-
-            <EditText
-                android:id="@+id/et_chooseFile"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="2"
-                android:text="No File Chosen"
-                android:textColor="#000000"
-                android:textSize="16sp" />
             <Button
                 android:id="@+id/btn_choose"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_margin="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_choose"
                 android:text="Choose"
@@ -394,162 +367,100 @@
                 android:textColor="#000"
                 android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/et_chooseFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/btn_form"
+                android:padding="8dp"
+                android:text="No File Chosen"
+                android:textColor="#3a3a3a"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs">
+
+            <Button
+                android:id="@+id/btn_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:background="#8000a4"
+
+                android:text="Create"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:background="#8000a4"
+                android:text="saved"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
+
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/btn_create_save"
-            android:text="Create"
-            android:textColor="#fff"
-            android:textSize="16sp"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
-
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/btn_create_save"
-            android:text="saved"
-            android:textColor="#fff"
-            android:textSize="16sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
-
-        <Button
             android:id="@+id/btn_invite"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:background="@drawable/btn_invite"
-            android:elevation="2dp"
-            android:fontFamily="sans-serif"
-            android:text="Invite your suppliers"
-            android:textAllCaps="true"
+            android:text="Invite Suppliers"
             android:textColor="#fff"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_erfxDocs" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_invite" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_invitedFriendsList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_invited_suppliers_list"
-            tools:itemCount="4"
-            android:visibility="gone"
-            tools:listitem="@layout/item_erfx_new_invited_supplier_list" />
-
+            app:layout_constraintTop_toBottomOf="@id/ll"
+            android:layout_margin="30dp"/>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card2"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_invited_suppliers_list">
+            android:background="#ffffff"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_invite"
+            app:layout_constraintStart_toStartOf="parent"
+            >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                >
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txt"
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="center"
-                    android:textColor="#fff"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_Name"
+                    android:id="@+id/textSupplier"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="4dp"
-                    android:padding="2dp"
-                    android:text="Supplier Name:%s"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Invited Suppliers List"
                     android:textColor="#000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/txt"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-
-                <TextView
-                    android:id="@+id/tv_ContactPersonName"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_peOpenSelectSupplierList"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:fontFamily="@font/nova"
-                    android:text="Contact person name:%s"
-                    android:textColor="#000000"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@id/tv_MobileNo"
-                    app:layout_constraintStart_toEndOf="@+id/txt"
-                    app:layout_constraintTop_toBottomOf="@id/tv_Name" />
+                    tools:listitem="@layout/item_invite_suppliers_erfx_new" />
 
-                <TextView
-                    android:id="@+id/tv_MobileNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:fontFamily="@font/nova"
-
-                    android:text="Supplier mobile number :%s"
-                    android:textColor="#000000"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@id/tv_Email"
-                    app:layout_constraintStart_toEndOf="@+id/txt"
-                    app:layout_constraintTop_toBottomOf="@id/tv_ContactPersonName" />
-
-                <TextView
-                    android:id="@+id/tv_Email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-
-                    android:fontFamily="@font/nova"
-                    android:text="Supplier email:%s"
-                    android:textColor="#000000"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/txt"
-                    app:layout_constraintTop_toBottomOf="@id/tv_MobileNo" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-           app:layout_constraintTop_toBottomOf="@id/card2"
-            app:layout_constraintStart_toStartOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

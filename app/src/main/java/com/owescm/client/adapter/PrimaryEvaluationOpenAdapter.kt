@@ -6,26 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.owescm.client.Model.PrimaryEvaluationOpenModel
 import com.owescm.client.R
+import com.owescm.client.model.OpenPrimaryEvaluationListResponse
 
-class PrimaryEvaluationOpenAdapter
-    (
-    private var mContext: Context?,
-    private var openList: ArrayList<PrimaryEvaluationOpenModel>
+class PrimaryEvaluationOpenAdapter(
+        private var mContext: Context?,
+        private var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data>
 ) : RecyclerView.Adapter<PrimaryEvaluationOpenAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_primary_evaluation_open, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.item_primary_evaluation_open, parent, false)
         return ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.setData(openList[position], position)
+        holder.setData(peOpenList[position], position)
     }
 
     override fun getItemCount(): Int {
-        return openList.size
+        return peOpenList.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,10 +34,9 @@ class PrimaryEvaluationOpenAdapter
         private var tvLocation = itemView.findViewById<TextView>(R.id.tv_location)
 
 
-
-        fun setData(openModel: PrimaryEvaluationOpenModel, position: Int) {
-            tvErfxId.text = openModel.erfxId.toString()
-            tvClientNAme.text=openModel.clientName
+        fun setData(openModel: OpenPrimaryEvaluationListResponse.Data, position: Int) {
+            tvErfxId.text = openModel.erfxId
+            tvClientNAme.text = openModel.contractFrom
             tvLocation.text = openModel.location
 
 

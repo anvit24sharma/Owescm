@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_erfx.*
 
 class ErfxActivity : AppCompatActivity() {
 
-    val erfxFragment=ErfxNewFragment()
     val erfxNewFragment = ErfxNewFragment()
     val erfxLiveFragment = ErfxLiveFragment()
     val erfxSavedFragment = ErfxSavedFragment()
@@ -25,11 +24,10 @@ class ErfxActivity : AppCompatActivity() {
 
         supportActionBar?.title = "eRfx"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         from = intent.getStringExtra("from")?:""
         openFragment()
         initClicks()
-
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -38,6 +36,7 @@ class ErfxActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     private fun openFragment() {
         when (from) {
             "New" -> openErfxNewFragment()
@@ -61,11 +60,6 @@ class ErfxActivity : AppCompatActivity() {
             openErfxClosedFragment()
         }
     }
-
-    private fun openErfxFragment() {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frameLayout_Erfx, erfxFragment)
-        transaction.commit()    }
 
     private fun openErfxClosedFragment() {
         val transaction = supportFragmentManager.beginTransaction()

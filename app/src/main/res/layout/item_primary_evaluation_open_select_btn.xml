@@ -2,151 +2,284 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="#f0f0f0">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="#fff">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"
-        android:background="#ffffff"
-        app:cardCornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/SupplierName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Mandvi Verma"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/SupplierLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Jhansi"
+        android:textColor="#2e2e2e"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SupplierName" />
+
+    <TextView
+        android:id="@+id/validTill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="Valid till:%s"
+        android:textColor="#F44336"
+        android:textSize="14sp"
+        android:textStyle="normal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/OwescmScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Owescm Score:%s"
+        android:textColor="#2e2e2e"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SupplierLocation" />
+
+    <TextView
+        android:id="@+id/Quotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Quotes:%s"
+        android:textColor="#2e2e2e"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/OwescmScore" />
+
+    <TextView
+        android:id="@+id/Remarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Remarks%s"
+        android:textColor="#2e2e2e"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Quotes" />
+
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Recommendation Reason:%s"
+        android:textColor="#2e2e2e"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Remarks" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="#e0e0e0"
+        app:layout_constraintTop_toBottomOf="@id/reason" />
+
+    <CheckBox
+        android:id="@+id/checkBoxShortlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:text="Shortlist"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+    <ImageView
+        android:id="@+id/imgDownload"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/download_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+    <TextView
+        android:id="@+id/textDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="Download Quote"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgDownload" />
+
+    <View
+        android:id="@+id/viewTop"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="#e0e0e0"
+        app:layout_constraintTop_toBottomOf="@id/textDownload" />
+
+    <LinearLayout
+        android:id="@+id/ll_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#F5E6FE"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/viewTop">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#fff">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_eRFX_No"
+                android:id="@+id/technical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="15dp"
-                android:text="eRFX No - #5849811178567"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/purple_img"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/purple_img"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/img_purple"
-                android:src="@drawable/circle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No"
-                app:layout_constraintBottom_toTopOf="@id/txt_location"/>
-
-
-            <View
-                android:id="@+id/view1"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="15dp"
-                android:background="#f0f0f0"
-                app:layout_constraintTop_toBottomOf="@id/purple_img" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/txt_clientName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Client Name:"
-                android:textColor="#000000"
+                android:text="Technical Ranking"
+                android:textColor="#000"
                 android:textSize="14sp"
-                android:textStyle="bold"
+                android:textStyle="normal" />
+        </LinearLayout>
 
-                app:layout_constraintStart_toEndOf="@id/purple_img"
-                app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="#e0e0e0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_clientName"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="10dp"
-                android:text="client name"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toEndOf="@id/txt_clientName"
-                app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
-
-            <TextView
-                android:id="@+id/txt_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="10dp"
-                android:text="Location:"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/purple_img"
-                app:layout_constraintTop_toBottomOf="@id/txt_clientName" />
-
-            <TextView
-                android:id="@+id/tv_location"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="10dp"
-                android:text="Location"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toEndOf="@id/txt_location"
-                app:layout_constraintTop_toBottomOf="@id/txt_clientName" />
-
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="20dp"
-                android:background="#f8f8f8"
-                app:layout_constraintTop_toBottomOf="@id/txt_location" />
-
-            <TextView
-                android:id="@+id/tv_Security"
+                android:id="@+id/commercial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="8dp"
-                android:text="eRfx Doc"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view2" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:textStyle="normal" />
 
-            <Button
-                android:id="@+id/btn_select"
-                android:layout_width="160dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/btn_purple"
-                android:text="Download"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Commercial Ranking"
+                android:textColor="#000"
                 android:textSize="14sp"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_Security" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="#e0e0e0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recommendation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Recommendation"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="#000"
+        app:layout_constraintTop_toBottomOf="@id/ll_ranking" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,17 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.owescm.client.Model.ErfxLiveModel
 import com.owescm.client.R
+import com.owescm.client.model.ErfxLiveListResponse
 
 class ErfxLiveAdapter
-    (
-    private var mContext: Context?,
-    private var erfxLiveList: ArrayList<ErfxLiveModel>
+(
+        private var mContext: Context?,
+        private var erfxLiveList: ArrayList<ErfxLiveListResponse.Data>
 ) : RecyclerView.Adapter<ErfxLiveAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_erfx_live, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.item_erfx_live, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -37,14 +37,13 @@ class ErfxLiveAdapter
         private var tvTime = itemView.findViewById<TextView>(R.id.tv_createdAt_Time)
         private var tvSecurity = itemView.findViewById<TextView>(R.id.tv_Security)
 
-
-        fun setData(liveModel: ErfxLiveModel, position: Int) {
-            tvErfxNo.text = liveModel.erfxNo.toString()
+        fun setData(liveModel: ErfxLiveListResponse.Data, position: Int) {
+            tvErfxNo.text = liveModel.erfxId
             tvErfxStatus.text = liveModel.erfxStatus
             tvLocation.text = liveModel.location
-            tvDate.text = liveModel.createdAtDate.toString()
-            tvTime.text = liveModel.createdAtTime.toString()
-            tvSecurity.text = liveModel.textSecurity
+            tvDate.text = liveModel.createdAt
+            tvTime.text = liveModel.createdAt
+            tvSecurity.text = liveModel.serviceSubCategoryName
 
 
         }
