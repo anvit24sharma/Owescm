@@ -1,21 +1,26 @@
 package com.owescm.client
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
+import com.owescm.OwescmApplication.Companion.prefs
 import com.owescm.client.adapter.ViewPagerAdapter
 import com.owescm.client.Fragment.HomeFragment
+import com.owescm.client.activities.LoginActivity
 
 
 class MainActivity : AppCompatActivity() {
     internal var prevMenuItem: Int? = null
-    lateinit var  drawerLayout: DrawerLayout
-    lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     val fragment = HomeFragment()
 
@@ -26,14 +31,92 @@ class MainActivity : AppCompatActivity() {
         openMainFragment()
 
 
-        drawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout = findViewById(R.id.drawerLayout)
         val actionBarDrawerToggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
-        navigationView = findViewById(R.id.nav_view)
+        navigationView = findViewById(R.id.navigationView)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        setClickOnNavigation()
+        navigationView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.notification -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on Notifications", Toast.LENGTH_SHORT).show()
+
+
+                }
+                R.id.management -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+
+
+                    Toast.makeText(this@MainActivity, "Clicked on User Management", Toast.LENGTH_SHORT).show()
+                }
+                R.id.erfx -> {
+
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on eRFX", Toast.LENGTH_SHORT).show()
+
+                }
+                R.id.primaryEvaluation -> {
+
+
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on Primary Evaluations", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.eAuction -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on eAuction", Toast.LENGTH_SHORT).show()
+                }
+                R.id.finalEvaluation -> {
+
+
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on Final Evaluations", Toast.LENGTH_SHORT).show()
+                }
+                R.id.contracts -> {
+
+
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on Contracts", Toast.LENGTH_SHORT).show()
+                }
+                R.id.spendManagement -> {
+
+
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on Spend Management", Toast.LENGTH_SHORT).show()
+                }
+                R.id.supportCenter -> {
+
+
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this@MainActivity, "Clicked on Support Center", Toast.LENGTH_SHORT).show()
+                }
+                R.id.logout -> {
+
+                    val builder = AlertDialog.Builder(this)
+
+                    builder.setMessage("Do you want to logout this application ?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes") { dialog: DialogInterface, i: Int ->
+                                prefs.edit().clear().apply()
+                                startActivity(Intent(this, LoginActivity::class.java))
+                                finish()
+                            }
+                            .setNegativeButton("No") { dialog: DialogInterface, i: Int ->
+                                dialog.cancel()
+                            }
+
+                    val alert = builder.create()
+                    alert.setTitle("LOGOUT")
+                    alert.show()
+                }
+            }
+            return@setNavigationItemSelectedListener true
+
+
+        }
 
 
     }
@@ -44,22 +127,10 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun setClickOnNavigation() {
-        navigationView.setNavigationItemSelectedListener { item ->
-            val id = item.itemId
-            if (id == R.id.home) {
-              //  startActivity(Intent(this@MainActivity, HomeFragment::class.java))
-                drawerLayout.closeDrawers()
-            }
-            true
-        }
-
-    }
-
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter =
-            ViewPagerAdapter(supportFragmentManager)
+                ViewPagerAdapter(supportFragmentManager)
         val homeFragment = HomeFragment()
         adapter.addFragment(homeFragment)
 //        adapter.addFragment(HistoryFragment())
