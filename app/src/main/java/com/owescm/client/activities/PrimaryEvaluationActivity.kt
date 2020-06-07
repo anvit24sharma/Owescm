@@ -2,27 +2,47 @@ package com.owescm.client.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.owescm.client.Fragment.PrimaryEvaluationFragment.PrimaryEvaluationClosedFragment
-import com.owescm.client.Fragment.PrimaryEvaluationFragment.PrimaryEvaluationOpenFragment
+import com.owescm.client.fragment.primaryevaluation.PrimaryEvaluationClosedFragment
+import com.owescm.client.fragment.primaryevaluation.PrimaryEvaluationOpenFragment
 import com.owescm.client.R
 import kotlinx.android.synthetic.main.activity_primary_evaluation.*
 
 class PrimaryEvaluationActivity : AppCompatActivity() {
-    val primaryEvaluationFragment = PrimaryEvaluationOpenFragment()
-    val primaryEvaluationOpenFragment = PrimaryEvaluationOpenFragment()
-    val primaryEvaluationClosedFragment = PrimaryEvaluationClosedFragment()
+    private val primaryEvaluationOpenFragment = PrimaryEvaluationOpenFragment()
+    private val primaryEvaluationClosedFragment = PrimaryEvaluationClosedFragment()
+    var from =""
+    var openCount = 0
+    var closedCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_primary_evaluation)
 
-        openPrimaryEvaluationFragment()
+        from = intent.getStringExtra("from")?:""
+        openCount = intent.getIntExtra("OpenCount",-1)
+        closedCount = intent.getIntExtra("ClosedCount",-1)
+        initView()
+        openFragment()
+
         rl_PrimaryEvaluation_open.setOnClickListener {
             openPrimaryEvaluationOpenFragment()
         }
         rl_PrimaryEvaluation_closed.setOnClickListener {
             openPrimaryEvaluationClosedFragment()
         }
+    }
+
+
+    private fun openFragment() {
+        when (from) {
+            "Open" -> openPrimaryEvaluationOpenFragment()
+            "Closed" -> openPrimaryEvaluationClosedFragment()
+        }
+    }
+
+    private fun initView() {
+        tv_count1.text = openCount.toString()
+        tv_count2.text = closedCount.toString()
     }
 
     private fun openPrimaryEvaluationClosedFragment() {
@@ -37,9 +57,5 @@ class PrimaryEvaluationActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun openPrimaryEvaluationFragment() {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frameLayout_PrimaryEvaluation, primaryEvaluationFragment)
-        transaction.commit()
-    }
+
 }

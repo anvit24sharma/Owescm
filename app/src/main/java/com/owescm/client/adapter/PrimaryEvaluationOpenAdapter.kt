@@ -1,4 +1,4 @@
-package com.owescm.client.Adapter
+package com.owescm.client.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,8 +10,9 @@ import com.owescm.client.R
 import com.owescm.client.model.OpenPrimaryEvaluationListResponse
 
 class PrimaryEvaluationOpenAdapter(
-        private var mContext: Context?,
-        private var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data>
+    private var mContext: Context?,
+    private var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data>,
+    val mCLickListener: ClickListener
 ) : RecyclerView.Adapter<PrimaryEvaluationOpenAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
@@ -32,15 +33,21 @@ class PrimaryEvaluationOpenAdapter(
         private val tvErfxId = itemView.findViewById<TextView>(R.id.tv_eRFX_id)
         private var tvClientNAme = itemView.findViewById<TextView>(R.id.tv_clientName)
         private var tvLocation = itemView.findViewById<TextView>(R.id.tv_location)
-
+        private var btnSelect = itemView.findViewById<TextView>(R.id.btn_select)
 
         fun setData(openModel: OpenPrimaryEvaluationListResponse.Data, position: Int) {
             tvErfxId.text = openModel.erfxId
             tvClientNAme.text = openModel.contractFrom
             tvLocation.text = openModel.location
 
-
+            btnSelect.setOnClickListener {
+                mCLickListener.onSelectClick(openModel.erfxId)
+            }
         }
 
+    }
+
+    interface ClickListener{
+        fun onSelectClick(erfxId :String)
     }
 }

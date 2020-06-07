@@ -51,6 +51,9 @@ class HomeVerticalAdapter(
                             when (mainPosition) {
                                 0 -> {
                                     intent = Intent(mContext, ErfxActivity::class.java)
+                                    intent.putExtra("SavedCount", it.itemList[1].count)
+                                    intent.putExtra("LiveCount", it.itemList[2].count)
+                                    intent.putExtra("ClosedCount", it.itemList[3].count)
                                     when (position) {
                                         0 -> {
                                             transitionName = "ErfxNew"
@@ -72,6 +75,9 @@ class HomeVerticalAdapter(
                                 }
                                 1 -> {
                                     intent = Intent(mContext, EAuctionActivity::class.java)
+                                    intent.putExtra("TodayCount", it.itemList[0].count)
+                                    intent.putExtra("UpcomingCount", it.itemList[1].count)
+                                    intent.putExtra("ClosedCount", it.itemList[2].count)
                                     when (position) {
                                         0 -> {
                                             transitionName = "EAuctionToday"
@@ -90,6 +96,8 @@ class HomeVerticalAdapter(
                                 }
                                 2 -> {
                                     intent = Intent(mContext, PrimaryEvaluationActivity::class.java)
+                                    intent.putExtra("OpenCount", it.itemList[0].count)
+                                    intent.putExtra("ClosedCount", it.itemList[1].count)
                                     when (position) {
                                         0 -> {
                                             transitionName = "PEOpen"
@@ -104,6 +112,8 @@ class HomeVerticalAdapter(
                                 }
                                 3 -> {
                                     intent = Intent(mContext, FinalEvaluationActivity::class.java)
+                                    intent.putExtra("OpenCount", it.itemList[0].count)
+                                    intent.putExtra("ClosedCount", it.itemList[1].count)
                                     when (position) {
                                         0 -> {
                                             transitionName = "FEOpen"
@@ -118,6 +128,8 @@ class HomeVerticalAdapter(
                                 }
                                 4 -> {
                                     intent = Intent(mContext, ContractActivity::class.java)
+                                    intent.putExtra("OpenCount", it.itemList[0].count)
+                                    intent.putExtra("ClosedCount", it.itemList[1].count)
                                     when (position) {
                                         0 -> {
                                             transitionName = "ContractOpen"
@@ -132,6 +144,8 @@ class HomeVerticalAdapter(
                                 }
                                 5 -> {
                                     intent = Intent(mContext, SpendManagementActivity::class.java)
+                                    intent.putExtra("ReportsCount", it.itemList[0].count)
+                                    intent.putExtra("StatusCount", it.itemList[1].count)
                                     when (position) {
                                         0 -> {
                                             transitionName = "SMReports"

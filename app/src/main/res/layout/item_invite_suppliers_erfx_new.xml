@@ -72,5 +72,5 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="#e0e0e0"
-        app:layout_constraintTop_toBottomOf="@id/Quotes" />
+        app:layout_constraintTop_toBottomOf="@id/supplierEmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>

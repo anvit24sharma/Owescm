@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.owescm.client.Fragment.ErfxFragment.ErfxSavedFragment">
+    tools:context="com.owescm.client.fragment.ErfxFragment.ErfxSavedFragment">
 
     <TextView
         android:id="@+id/tv_saved_erfx"

@@ -1,5 +1,6 @@
 package com.owescm.remote
 
+import com.owescm.client.fragment.primaryevaluation.PrimaryEvaluationDetailsActivity
 import com.owescm.client.model.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -30,4 +31,8 @@ interface OwescmRemoteEndPoint {
     @Multipart
     @POST("/app/client/getOpenPrimaryEvaluationList")
     fun getOpenPrimaryEvaluationList(@PartMap erfxLiveRequest: MutableMap<String, RequestBody?>): Call<OpenPrimaryEvaluationListResponse>
+
+    @Multipart
+    @POST("/app/client/getPrimaryEvaluationOpenErfx")
+    fun getPrimaryEvaluationDetails(@PartMap erfxLiveRequest: MutableMap<String, RequestBody?>): Call<PrimaryEvaluationDetailsResponse>
 }

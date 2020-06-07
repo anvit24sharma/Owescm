@@ -9,7 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
 import com.owescm.client.adapter.ViewPagerAdapter
-import com.owescm.client.Fragment.HomeFragment
+import com.owescm.client.fragment.HomeFragment
 
 
 class MainActivity : AppCompatActivity() {

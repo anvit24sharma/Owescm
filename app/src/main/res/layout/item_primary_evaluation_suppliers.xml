@@ -7,7 +7,7 @@
     android:background="#fff">
 
     <TextView
-        android:id="@+id/SupplierName"
+        android:id="@+id/tvSupplierName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/SupplierLocation"
+        android:id="@+id/tvSupplierLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -32,10 +32,10 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SupplierName" />
+        app:layout_constraintTop_toBottomOf="@id/tvSupplierName" />
 
     <TextView
-        android:id="@+id/validTill"
+        android:id="@+id/tvValidTill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -46,12 +46,11 @@
         android:textColor="#F44336"
         android:textSize="14sp"
         android:textStyle="normal"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/OwescmScore"
+        android:id="@+id/tvOwescmScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -62,10 +61,10 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SupplierLocation" />
+        app:layout_constraintTop_toBottomOf="@id/tvSupplierLocation" />
 
     <TextView
-        android:id="@+id/Quotes"
+        android:id="@+id/tvQuotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -76,10 +75,10 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/OwescmScore" />
+        app:layout_constraintTop_toBottomOf="@id/tvOwescmScore" />
 
     <TextView
-        android:id="@+id/Remarks"
+        android:id="@+id/tvRemarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -90,10 +89,10 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Quotes" />
+        app:layout_constraintTop_toBottomOf="@id/tvQuotes" />
 
     <TextView
-        android:id="@+id/reason"
+        android:id="@+id/tvReason"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -104,7 +103,7 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Remarks" />
+        app:layout_constraintTop_toBottomOf="@id/tvRemarks" />
 
     <View
         android:id="@+id/view"
@@ -115,7 +114,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="#e0e0e0"
-        app:layout_constraintTop_toBottomOf="@id/reason" />
+        app:layout_constraintTop_toBottomOf="@id/tvReason" />
 
     <CheckBox
         android:id="@+id/checkBoxShortlist"
@@ -176,7 +175,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/technical"
+                android:id="@+id/tvtechnical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -212,7 +211,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/commercial"
+                android:id="@+id/tvCommercial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -248,7 +247,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/recommendation"
+                android:id="@+id/tvRecommendation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

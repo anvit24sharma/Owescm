@@ -1,5 +1,6 @@
-package com.owescm.client.Fragment.PrimaryEvaluationFragment
+package com.owescm.client.fragment.primaryevaluation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
-import com.owescm.client.Adapter.PrimaryEvaluationOpenAdapter
+import com.owescm.client.adapter.PrimaryEvaluationOpenAdapter
 import com.owescm.client.R
 import com.owescm.client.model.OpenPrimaryEvaluationListResponse
 import com.owescm.client.viewmodel.HomeViewModel
@@ -21,7 +22,7 @@ import okhttp3.RequestBody
 import java.util.HashMap
 
 
-class PrimaryEvaluationOpenFragment : Fragment() {
+class PrimaryEvaluationOpenFragment : Fragment(), PrimaryEvaluationOpenAdapter.ClickListener {
 
     lateinit var homeViewModel: HomeViewModel
     var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data> = ArrayList()
@@ -40,7 +41,7 @@ class PrimaryEvaluationOpenFragment : Fragment() {
 
     private fun initRecyclerView() {
         peOpenListAdapter = peOpenList.let {
-            PrimaryEvaluationOpenAdapter(context, it)
+            PrimaryEvaluationOpenAdapter(context, it,this)
         }
 
         rv_peOpenList.apply {
@@ -64,6 +65,12 @@ class PrimaryEvaluationOpenFragment : Fragment() {
                 Toast.makeText(context, "Primary Evaluation Open List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    override fun onSelectClick(erfxId: String) {
+        val intent = Intent(context,PrimaryEvaluationDetailsActivity::class.java)
+        intent.putExtra("erfxId",erfxId)
+        startActivity(intent)
     }
 
 }
