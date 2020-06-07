@@ -27,8 +27,8 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     lateinit var homeVerticalAdapter: HomeVerticalAdapter
     lateinit var homeViewodel: HomeViewModel
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
@@ -43,6 +43,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     }
 
     private fun getAllCounts() {
+        progressBar.visibility = View.VISIBLE
         val map = HashMap<String, String>()
         map["user_id"] = prefs.getString(USER_ID, "-1") ?: "-1"
         map["api_key"] = OwescmApplication.apiKey
@@ -50,8 +51,10 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
         homeViewodel.getAllCounts(map).observe(this, androidx.lifecycle.Observer {
             if (it.status == "success") {
+                progressBar.visibility = View.INVISIBLE
                 initList(it.data)
             } else {
+                progressBar.visibility = View.INVISIBLE
                 Toast.makeText(context, "Count Api Failed", Toast.LENGTH_SHORT).show()
             }
         })
