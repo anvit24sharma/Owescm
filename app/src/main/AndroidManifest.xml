@@ -31,8 +31,6 @@
         <activity android:name=".activities.ForgotPasswordActivity" />
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.LoginActivity" />
-
-
         <activity android:name=".MainActivity" />
     </application>
 
