@@ -54,6 +54,7 @@ class ErfxLiveFragment : Fragment() {
     }
 
     private fun getErfxLiveList() {
+        progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
         map["api_key"] = toRequestBody(apiKey)
         map["user_type"] = toRequestBody(userType)
@@ -62,9 +63,12 @@ class ErfxLiveFragment : Fragment() {
 
         homeViewModel.getErfxLiveList(map).observe(this, Observer {
             if (it.status == "success") {
+                progressBar.visibility = View.INVISIBLE
                 erfxLiveList.addAll(it.data)
                 erfxLiveListAdapter.notifyDataSetChanged()
             } else {
+                progressBar.visibility = View.INVISIBLE
+
                 Toast.makeText(context, "Erfx Saved List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })

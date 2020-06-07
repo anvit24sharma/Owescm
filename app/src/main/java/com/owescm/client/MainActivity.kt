@@ -25,35 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         openMainFragment()
 
-//        menu_bottom.get(0).isSelected =true
-//        menu_bottom.setOnItemSelectedListener{
-//            when (it) {
-//                R.id.home -> viewpager.currentItem = 0
-//                R.id.profile -> viewpager.currentItem = 1
-//                R.id.settings -> viewpager.currentItem = 2
-//            }
-//        }
 
-
-/*        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-
-            }
-            override fun onPageSelected(position: Int) {
-                if (prevMenuItem != null) {
-                    menu_bottom.get(prevMenuItem!!).isSelected =false
-                } else {
-                    menu_bottom.get(0).isSelected =false
-                }
-                Log.d("page", "onPageSelected: $position")
-                menu_bottom.get(position).isSelected =true
-                prevMenuItem =  position
-            }
-
-            override fun onPageScrollStateChanged(state: Int) {
-
-            }
-        });*/
         drawerLayout = findViewById(R.id.drawer_layout)
         val actionBarDrawerToggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
@@ -67,7 +39,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openMainFragment() {
-
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frameLayout, fragment)
         transaction.commit()

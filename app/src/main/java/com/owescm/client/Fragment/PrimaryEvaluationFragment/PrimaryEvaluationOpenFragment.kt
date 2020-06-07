@@ -50,6 +50,7 @@ class PrimaryEvaluationOpenFragment : Fragment() {
     }
 
     private fun getOpenPrimaryEvaluationList() {
+        progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
         map["api_key"] = Constants.toRequestBody(OwescmApplication.apiKey)
         map["user_type"] = Constants.toRequestBody(OwescmApplication.userType)
@@ -58,9 +59,13 @@ class PrimaryEvaluationOpenFragment : Fragment() {
 
         homeViewModel.getOpenPrimaryEvaluationList(map).observe(this, Observer {
             if (it.status == "success") {
+                progressBar.visibility = View.INVISIBLE
+
                 peOpenList.addAll(it.data)
                 peOpenListAdapter.notifyDataSetChanged()
             } else {
+                progressBar.visibility = View.INVISIBLE
+
                 Toast.makeText(context, "Primary Evaluation Open List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })

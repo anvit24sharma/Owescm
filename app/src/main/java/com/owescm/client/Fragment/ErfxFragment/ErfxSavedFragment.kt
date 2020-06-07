@@ -17,6 +17,8 @@ import com.owescm.client.model.ErfxSavedListResponse
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
 import kotlinx.android.synthetic.main.fragment_erfx_saved.*
+import kotlinx.android.synthetic.main.fragment_erfx_saved.progressBar
+import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.RequestBody
 import java.util.HashMap
 
@@ -49,6 +51,7 @@ class ErfxSavedFragment : Fragment() {
     }
 
     private fun getErfxSavedList() {
+        progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
         map["api_key"] = Constants.toRequestBody(OwescmApplication.apiKey)
         map["user_type"] = Constants.toRequestBody(OwescmApplication.userType)
@@ -57,9 +60,11 @@ class ErfxSavedFragment : Fragment() {
 
         homeViewModel.getErfxSavedList(map).observe(this, Observer {
             if (it.status == "success") {
+                progressBar.visibility = View.INVISIBLE
                 erfxSavedList.addAll(it.data)
                 erfxSavedListAdapter.notifyDataSetChanged()
             } else {
+                progressBar.visibility = View.INVISIBLE
                 Toast.makeText(context, "Erfx Saved List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })
