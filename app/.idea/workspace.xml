@@ -10,79 +10,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a0083a0-c276-46e0-b838-3782528cfe41" name="Default Changelist" comment="fragments">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxNewInviteSuppliersBSFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/PrimaryEvaluationFragment/PeOpenSelectButtonFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/CountModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxLiveListResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxSavedListResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/LoginResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/OpenPrimaryEvaluationListResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/viewmodel/AuthViewodel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/viewmodel/HomeViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/owescm/utils/FileUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/bg2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/btn_shortlist_create.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/download_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/friend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_check.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_new_invite_suppliers_b_s.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_pe_open_select_button.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/item_invite_suppliers_erfx_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_ktx_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_ktx_1_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_ktx_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_1_3_0_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_2_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/OwescmApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/OwescmApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxLiveFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxLiveFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxNewFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxNewFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxSavedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/ErfxFragment/ErfxSavedFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/PrimaryEvaluationFragment/PrimaryEvaluationOpenFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/Fragment/PrimaryEvaluationFragment/PrimaryEvaluationOpenFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/ErfxClosedModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/ErfxLiveModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/ErfxSavedModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/FinalEvaluationClosedModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/FinalEvaluationOpenModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/HomeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/HomeModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/InvitedSuppliersListModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/PrimaryEvaluationOpenModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/Model/PrimaryEvaluationOpenSelectBtnModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/activities/ErfxActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/activities/ErfxActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/activities/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/activities/LoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/ErfxLiveAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/ErfxLiveAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/ErfxSavedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/ErfxSavedAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/HomeHorizontalAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/HomeHorizontalAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/HomeVerticalAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/HomeVerticalAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/PrimaryEvaluationOpenAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/adapter/PrimaryEvaluationOpenAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxClosedModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxClosedModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxLiveModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxLiveModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxSavedModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/ErfxSavedModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/FinalEvaluationClosedModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/FinalEvaluationClosedModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/FinalEvaluationOpenModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/FinalEvaluationOpenModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/InvitedSuppliersListModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/InvitedSuppliersListModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/PrimaryEvaluationOpenModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/PrimaryEvaluationOpenModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/PrimaryEvaluationOpenSelectBtnModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/client/model/PrimaryEvaluationOpenSelectBtnModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/remote/NetworkModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/remote/NetworkModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/remote/OwescmRemoteEndPoint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/remote/OwescmRemoteEndPoint.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/services/repository/OwescmRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/services/repository/OwescmRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/utils/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/utils/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/owescm/utils/NetworkUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owescm/utils/NetworkUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_erfx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_erfx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_live.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_live.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_saved.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_erfx_saved.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_primary_evaluation_open.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_primary_evaluation_open.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_erfx_live.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_erfx_live.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_erfx_saved.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_erfx_saved.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_primary_evaluation_open_select_btn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_primary_evaluation_open_select_btn.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +49,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_4_API_25" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="35196d110304" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -242,7 +197,35 @@
       <option name="project" value="LOCAL" />
       <updated>1591334881809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="progress">
+      <created>1591514444841</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591514444841</updated>
+    </task>
+    <task id="LOCAL-00004" summary="navigation">
+      <created>1591536741817</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591536741817</updated>
+    </task>
+    <task id="LOCAL-00005" summary="splash screen">
+      <created>1591542827732</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591542827732</updated>
+    </task>
+    <task id="LOCAL-00006" summary="nav splash">
+      <created>1591544012295</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591544012295</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,6 +245,10 @@
     <MESSAGE value="hi" />
     <MESSAGE value="invite" />
     <MESSAGE value="fragments" />
-    <option name="LAST_COMMIT_MESSAGE" value="fragments" />
+    <MESSAGE value="progress" />
+    <MESSAGE value="navigation" />
+    <MESSAGE value="splash screen" />
+    <MESSAGE value="nav splash" />
+    <option name="LAST_COMMIT_MESSAGE" value="nav splash" />
   </component>
 </project>

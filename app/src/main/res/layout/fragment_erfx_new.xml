@@ -10,8 +10,6 @@
         android:layout_height="match_parent"
         android:background="#F5E6FE">
 
-
-
         <TextView
             android:id="@+id/tv_createErfx"
             android:layout_width="wrap_content"
