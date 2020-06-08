@@ -33,7 +33,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/logo"
+        android:background="@drawable/icon_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_wave" />

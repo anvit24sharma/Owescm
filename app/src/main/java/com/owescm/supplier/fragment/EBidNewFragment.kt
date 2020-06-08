@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.owescm.supplier.R
 
 
+@Suppress("UNREACHABLE_CODE")
 class EBidNewFragment : Fragment() {
 
 
@@ -17,6 +18,7 @@ class EBidNewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ebid_new, container, false)
+
     }
 
 }
