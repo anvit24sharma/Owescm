@@ -25,6 +25,7 @@
         <activity android:name=".activities.SpendManagementActivity" />
         <activity android:name=".activities.FinalEvaluationActivity" />
         <activity android:name=".activities.PrimaryEvaluationActivity" />
+        <activity android:name=".fragment.primaryevaluation.PrimaryEvaluationDetailsActivity" />
         <activity android:name=".activities.ContractActivity" />
         <activity android:name=".activities.EAuctionActivity" />
         <activity android:name=".activities.ErfxActivity" />

@@ -15,6 +15,7 @@ class HomeViewModel :ViewModel(){
     lateinit var erfxLiveListResponse:  LiveData<ErfxLiveListResponse>
     lateinit var erfxSavedListResponse:  LiveData<ErfxSavedListResponse>
     lateinit var openPrimaryEvaluationLiveListResponse:  LiveData<OpenPrimaryEvaluationListResponse>
+    lateinit var primaryEvaluationDetailsLiveResponse:  LiveData<PrimaryEvaluationDetailsResponse>
 
 
     fun getAllCounts(getAllCountsRequest : HashMap<String,String>) : LiveData<CountModel>{
@@ -54,4 +55,13 @@ class HomeViewModel :ViewModel(){
         }
         return openPrimaryEvaluationLiveListResponse
     }
+
+    fun getPrimaryEvaluationDetails(
+        openPrimaryEvaluationeMap: MutableMap<String, RequestBody?>) : LiveData<PrimaryEvaluationDetailsResponse>{
+        primaryEvaluationDetailsLiveResponse = Transformations.map(getOwescmRepository().getPrimaryEvaluationDetails(openPrimaryEvaluationeMap)){
+            return@map it.responseData
+        }
+        return primaryEvaluationDetailsLiveResponse
+    }
 }
+

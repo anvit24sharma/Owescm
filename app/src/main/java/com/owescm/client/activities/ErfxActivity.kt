@@ -3,20 +3,23 @@ package com.owescm.client.activities
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.owescm.client.Fragment.ErfxFragment.ErfxClosedFragment
-import com.owescm.client.Fragment.ErfxFragment.ErfxLiveFragment
-import com.owescm.client.Fragment.ErfxFragment.ErfxNewFragment
-import com.owescm.client.Fragment.ErfxFragment.ErfxSavedFragment
+import com.owescm.client.fragment.ErfxFragment.ErfxClosedFragment
+import com.owescm.client.fragment.ErfxFragment.ErfxLiveFragment
+import com.owescm.client.fragment.ErfxFragment.ErfxNewFragment
+import com.owescm.client.fragment.ErfxFragment.ErfxSavedFragment
 import com.owescm.client.R
 import kotlinx.android.synthetic.main.activity_erfx.*
 
 class ErfxActivity : AppCompatActivity() {
 
-    val erfxNewFragment = ErfxNewFragment()
-    val erfxLiveFragment = ErfxLiveFragment()
-    val erfxSavedFragment = ErfxSavedFragment()
-    val erfxClosedFragment = ErfxClosedFragment()
+    private val erfxNewFragment = ErfxNewFragment()
+    private val erfxLiveFragment = ErfxLiveFragment()
+    private val erfxSavedFragment = ErfxSavedFragment()
+    private val erfxClosedFragment = ErfxClosedFragment()
     var from =""
+    var savedCount = 0
+    var livedCount = 0
+    var closedCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +29,19 @@ class ErfxActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         from = intent.getStringExtra("from")?:""
+        savedCount = intent.getIntExtra("SavedCount",-1)
+        livedCount = intent.getIntExtra("LiveCount",-1)
+        closedCount = intent.getIntExtra("ClosedCount",-1)
+
+        initView()
         openFragment()
         initClicks()
+    }
+
+    private fun initView() {
+        tv_count2.text = savedCount.toString()
+        tv_count3.text = livedCount.toString()
+        tv_count4.text = closedCount.toString()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

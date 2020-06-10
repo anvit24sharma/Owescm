@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment.FinalEvaluationFragment
+package com.owescm.client.fragment.SpendManagementFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.owescm.client.R
 
 
-class FinalEvaluationClosedFragment : Fragment() {
+class SpendManagementStatusFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +21,7 @@ class FinalEvaluationClosedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_final_evaluation_closed, container, false)
+        return inflater.inflate(R.layout.fragment_spend_management_status, container, false)
     }
-
-
 
 }

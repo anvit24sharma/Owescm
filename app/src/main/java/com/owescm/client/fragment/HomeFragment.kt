@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment
+package com.owescm.client.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

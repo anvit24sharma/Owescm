@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment.PrimaryEvaluationFragment
+package com.owescm.client.fragment.ErfxFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,45 +11,46 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
-import com.owescm.client.Adapter.PrimaryEvaluationOpenAdapter
+import com.owescm.client.Adapter.ErfxSavedAdapter
 import com.owescm.client.R
-import com.owescm.client.model.OpenPrimaryEvaluationListResponse
+import com.owescm.client.model.ErfxSavedListResponse
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
-import kotlinx.android.synthetic.main.fragment_primary_evaluation_open.*
+import kotlinx.android.synthetic.main.fragment_erfx_saved.*
+import kotlinx.android.synthetic.main.fragment_erfx_saved.progressBar
+import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.RequestBody
 import java.util.HashMap
 
 
-class PrimaryEvaluationOpenFragment : Fragment() {
-
+class ErfxSavedFragment : Fragment() {
     lateinit var homeViewModel: HomeViewModel
-    var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data> = ArrayList()
-    lateinit var peOpenListAdapter: PrimaryEvaluationOpenAdapter
+    var erfxSavedList: ArrayList<ErfxSavedListResponse.Data> = ArrayList()
+    lateinit var erfxSavedListAdapter: ErfxSavedAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_primary_evaluation_open, container, false)
+        return inflater.inflate(R.layout.fragment_erfx_saved, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        getOpenPrimaryEvaluationList()
+        getErfxSavedList()
         initRecyclerView()
 
     }
 
     private fun initRecyclerView() {
-        peOpenListAdapter = peOpenList.let {
-            PrimaryEvaluationOpenAdapter(context, it)
+        erfxSavedListAdapter = erfxSavedList.let {
+            ErfxSavedAdapter(context, it)
         }
 
-        rv_peOpenList.apply {
-            adapter = peOpenListAdapter
+        rv_erfxSavedList.apply {
+            adapter = erfxSavedListAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
     }
 
-    private fun getOpenPrimaryEvaluationList() {
+    private fun getErfxSavedList() {
         progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
         map["api_key"] = Constants.toRequestBody(OwescmApplication.apiKey)
@@ -57,18 +58,15 @@ class PrimaryEvaluationOpenFragment : Fragment() {
         map["user_id"] = Constants.toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
                 ?: "-1")
 
-        homeViewModel.getOpenPrimaryEvaluationList(map).observe(this, Observer {
+        homeViewModel.getErfxSavedList(map).observe(this, Observer {
             if (it.status == "success") {
                 progressBar.visibility = View.INVISIBLE
-
-                peOpenList.addAll(it.data)
-                peOpenListAdapter.notifyDataSetChanged()
+                erfxSavedList.addAll(it.data)
+                erfxSavedListAdapter.notifyDataSetChanged()
             } else {
                 progressBar.visibility = View.INVISIBLE
-
-                Toast.makeText(context, "Primary Evaluation Open List Api Failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Erfx Saved List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })
     }
-
 }

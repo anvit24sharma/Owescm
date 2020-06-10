@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.owescm.client.Fragment.FinalEvaluationFragment.FinalEvaluationOpenFragment">
+    tools:context="com.owescm.client.fragment.FinalEvaluationFragment.FinalEvaluationOpenFragment">
 <include layout="@layout/item_final_evaluation_open"/>
 
 

@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment.EAuctionFragment
+package com.owescm.client.fragment.EAuctionFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

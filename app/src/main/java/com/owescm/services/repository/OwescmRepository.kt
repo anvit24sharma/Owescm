@@ -47,4 +47,10 @@ class OwescmRepository(private val remoteApiEndPoint: OwescmRemoteEndPoint) {
         }
     }
 
+    fun getPrimaryEvaluationDetails(openPrimaryEvaluationRequest: MutableMap<String, RequestBody?>): MutableLiveData<DataWrapper<PrimaryEvaluationDetailsResponse>> {
+        return makeNetworkCall {
+            retrofitCall = remoteApiEndPoint.getPrimaryEvaluationDetails(openPrimaryEvaluationRequest)
+        }
+    }
+
 }

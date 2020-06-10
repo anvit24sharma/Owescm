@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment.EAuctionFragment
+package com.owescm.client.fragment.ContractFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.owescm.client.R
 
-class EAuctionTodayFragment : Fragment() {
+
+class ContractClosedFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -20,7 +21,7 @@ class EAuctionTodayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_e_auction_today, container, false)
+        return inflater.inflate(R.layout.fragment_contract_closed, container, false)
     }
 
 }

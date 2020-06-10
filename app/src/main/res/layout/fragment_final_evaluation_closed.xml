@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.owescm.client.Fragment.FinalEvaluationFragment.FinalEvaluationClosedFragment">
+    tools:context="com.owescm.client.fragment.FinalEvaluationFragment.FinalEvaluationClosedFragment">
 <include layout="@layout/item_final_evaluation_closed"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment.EAuctionFragment
+package com.owescm.client.fragment.primaryevaluation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.owescm.client.R
 
+class PrimaryEvaluationClosedFragment : Fragment() {
 
-class EAuctionClosedFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +20,7 @@ class EAuctionClosedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_e_auction_closed, container, false)
+        return inflater.inflate(R.layout.fragment_primary_evaluation_closed, container, false)
     }
 
 }

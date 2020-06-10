@@ -1,4 +1,4 @@
-package com.owescm.client.Fragment.ErfxFragment
+package com.owescm.client.fragment.FinalEvaluationFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.owescm.client.R
 
-class ErfxClosedFragment : Fragment() {
+
+class FinalEvaluationClosedFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,9 @@ class ErfxClosedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_erfx_closed, container, false)
+        return inflater.inflate(R.layout.fragment_final_evaluation_closed, container, false)
     }
+
+
 
 }

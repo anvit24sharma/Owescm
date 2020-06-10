@@ -1,5 +1,6 @@
-package com.owescm.client.Fragment.ErfxFragment
+package com.owescm.client.fragment.primaryevaluation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,46 +12,45 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
-import com.owescm.client.Adapter.ErfxSavedAdapter
+import com.owescm.client.adapter.PrimaryEvaluationOpenAdapter
 import com.owescm.client.R
-import com.owescm.client.model.ErfxSavedListResponse
+import com.owescm.client.model.OpenPrimaryEvaluationListResponse
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
-import kotlinx.android.synthetic.main.fragment_erfx_saved.*
-import kotlinx.android.synthetic.main.fragment_erfx_saved.progressBar
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_primary_evaluation_open.*
 import okhttp3.RequestBody
 import java.util.HashMap
 
 
-class ErfxSavedFragment : Fragment() {
+class PrimaryEvaluationOpenFragment : Fragment(), PrimaryEvaluationOpenAdapter.ClickListener {
+
     lateinit var homeViewModel: HomeViewModel
-    var erfxSavedList: ArrayList<ErfxSavedListResponse.Data> = ArrayList()
-    lateinit var erfxSavedListAdapter: ErfxSavedAdapter
+    var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data> = ArrayList()
+    lateinit var peOpenListAdapter: PrimaryEvaluationOpenAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_erfx_saved, container, false)
+        return inflater.inflate(R.layout.fragment_primary_evaluation_open, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        getErfxSavedList()
+        getOpenPrimaryEvaluationList()
         initRecyclerView()
 
     }
 
     private fun initRecyclerView() {
-        erfxSavedListAdapter = erfxSavedList.let {
-            ErfxSavedAdapter(context, it)
+        peOpenListAdapter = peOpenList.let {
+            PrimaryEvaluationOpenAdapter(context, it,this)
         }
 
-        rv_erfxSavedList.apply {
-            adapter = erfxSavedListAdapter
+        rv_peOpenList.apply {
+            adapter = peOpenListAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
     }
 
-    private fun getErfxSavedList() {
+    private fun getOpenPrimaryEvaluationList() {
         progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
         map["api_key"] = Constants.toRequestBody(OwescmApplication.apiKey)
@@ -58,15 +58,24 @@ class ErfxSavedFragment : Fragment() {
         map["user_id"] = Constants.toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
                 ?: "-1")
 
-        homeViewModel.getErfxSavedList(map).observe(this, Observer {
+        homeViewModel.getOpenPrimaryEvaluationList(map).observe(this, Observer {
             if (it.status == "success") {
                 progressBar.visibility = View.INVISIBLE
-                erfxSavedList.addAll(it.data)
-                erfxSavedListAdapter.notifyDataSetChanged()
+
+                peOpenList.addAll(it.data)
+                peOpenListAdapter.notifyDataSetChanged()
             } else {
                 progressBar.visibility = View.INVISIBLE
-                Toast.makeText(context, "Erfx Saved List Api Failed", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(context, "Primary Evaluation Open List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })
     }
+
+    override fun onSelectClick(erfxId: String) {
+        val intent = Intent(context,PrimaryEvaluationDetailsActivity::class.java)
+        intent.putExtra("erfxId",erfxId)
+        startActivity(intent)
+    }
+
 }
