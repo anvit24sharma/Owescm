@@ -1,4 +1,4 @@
-package com.owescm.client.fragment.ErfxFragment
+package com.owescm.client.fragment.erfx
 
 import android.Manifest
 import android.app.Activity
@@ -19,11 +19,15 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
 import com.owescm.OwescmApplication.Companion.apiKey
 import com.owescm.OwescmApplication.Companion.userType
+import com.owescm.client.adapter.InvitedSuppliersListAdapter
 import com.owescm.client.R
 import com.owescm.client.model.ErfxModel
+import com.owescm.client.model.InvitedSuppliersListModel
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
 import com.owescm.utils.FileUtils
@@ -37,6 +41,7 @@ import java.util.*
 
 class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheetListner {
 
+    var invitedSuppliersList = ArrayList<InvitedSuppliersListModel>()
     private val READ_STORAGE_PERMISSION_REQUEST_CODE = 101
     lateinit var homeViewModel: HomeViewModel
     var category = arrayOf("Security", "B", "C", "D")
@@ -47,16 +52,13 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
     var selectedCategory: String = ""
     var selectedSubCategory: String = ""
     var string: String = ""
-    var string2: String = ""
-
+    lateinit var invitedSuppliersListAdapter: InvitedSuppliersListAdapter
     lateinit var subcategory: Array<String>
     private val FILE_SELECT_CODE = 0
     var path: String? = null
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
+    var inviteBSFragment : ErfxNewInviteSuppliersBSFragment ?=null
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_erfx_new, container, false)
     }
 
@@ -65,7 +67,19 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         onClick()
         initSpinners()
+        initRecyclerView()
 
+    }
+
+    private fun initRecyclerView() {
+        invitedSuppliersListAdapter = invitedSuppliersList.let {
+            InvitedSuppliersListAdapter(context, it)
+        }
+
+        rvInvitedSuppliers.apply {
+            adapter = invitedSuppliersListAdapter
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        }
     }
 
     private fun initSpinners() {
@@ -74,12 +88,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
             }
 
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 subcategory = when (position) {
                     0 -> {
                         subCategory0
@@ -94,16 +103,14 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
                         subCategory3
                     }
                 }
-                val subCategoryAdapter =
-                        ArrayAdapter(context!!, android.R.layout.simple_spinner_item, subcategory)
+                val subCategoryAdapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, subcategory)
                 subCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spinnerSubCategory.adapter = subCategoryAdapter
-
                 selectedCategory = category[position]
             }
         }
-        val categoryAdapter =
-                ArrayAdapter(context!!, android.R.layout.simple_spinner_item, category)
+
+        val categoryAdapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, category)
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCategory.adapter = categoryAdapter
 
@@ -112,12 +119,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
             }
 
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedSubCategory = subcategory[position].toString()
             }
 
@@ -130,30 +132,23 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         btn_create.setOnClickListener {
             val map: MutableMap<String, RequestBody?> = HashMap()
             if (selectedCategory == "" || selectedSubCategory == "") {
-                Toast.makeText(context, "Please select Category and SubCategory.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "Please select Category and SubCategory.",
+                    Toast.LENGTH_SHORT
+                ).show()
 
             } else if (et_from.text.toString() == "" ||
-                    et_to.text.toString() == "" ||
-                    et_headLine.text.toString() == "" ||
-                    et_loc.text.toString() == "" ||
-                    et_paymentTerms.text.toString() == "" ||
-                    et_specialReq.text.toString() == "") {
+                et_to.text.toString() == "" ||
+                et_headLine.text.toString() == "" ||
+                et_loc.text.toString() == "" ||
+                et_paymentTerms.text.toString() == "" ||
+                et_specialReq.text.toString() == ""
+            ) {
                 Toast.makeText(context, "Please Fill All Details.", Toast.LENGTH_SHORT).show()
 
             } else {
-                val erfxModel = ErfxModel(
-                        apiKey,
-                        userType,
-                        selectedCategory,
-                        et_from.text.toString(),
-                        et_to.text.toString(),
-                        et_headLine.text.toString(),
-                        et_loc.text.toString(),
-                        et_paymentTerms.text.toString(),
-                        et_specialReq.text.toString(),
-                        selectedSubCategory,
-                        OwescmApplication.prefs.getString(Constants.USER_ID, "-1") ?: "-1"
-                )
+                val erfxModel = ErfxModel(apiKey, userType, "1", et_from.text.toString(), et_to.text.toString(), et_headLine.text.toString(), et_loc.text.toString(), et_paymentTerms.text.toString(), et_specialReq.text.toString(), "1", OwescmApplication.prefs.getString(Constants.USER_ID, "-1") ?: "-1", invitedSuppliersList)
 
                 map["api_key"] = toRequestBody(erfxModel.apiKey)
                 map["user_type"] = toRequestBody(erfxModel.userType)
@@ -173,7 +168,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
                 if (path != null) {
                     val file = File(path)
                     val requestFile: RequestBody =
-                            RequestBody.create(MediaType.parse("multipart/form-data"), file)
+                        RequestBody.create(MediaType.parse("multipart/form-data"), file)
                     val body = MultipartBody.Part.createFormData("erfxDoc", file.name, requestFile)
                     homeViewModel.createErfx(map, body)
                 } else {
@@ -194,11 +189,11 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
 
             val datePickerDialog = DatePickerDialog(
-                    context!!,
-                    OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        et_from.text =
-                                year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
-                    }, mYear, mMonth, mDay
+                context!!,
+                OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    et_from.text =
+                        year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+                }, mYear, mMonth, mDay
             )
             datePickerDialog.show()
         }
@@ -211,11 +206,11 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
 
             val datePickerDialog = DatePickerDialog(
-                    context!!,
-                    OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        et_to.text =
-                                year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
-                    }, mYear, mMonth, mDay
+                context!!,
+                OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    et_to.text =
+                        year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+                }, mYear, mMonth, mDay
             )
             datePickerDialog.show()
         }
@@ -225,8 +220,8 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         }
 
         btn_invite.setOnClickListener {
-            val inviteBSFragment = ErfxNewInviteSuppliersBSFragment("string", this)
-            inviteBSFragment.show(fragmentManager!!, "schedule")
+            inviteBSFragment = ErfxNewInviteSuppliersBSFragment("string", this)
+            inviteBSFragment?.show(fragmentManager!!, "schedule")
         }
     }
 
@@ -236,10 +231,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         intent.type = "*/*"
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         try {
-            startActivityForResult(
-                    Intent.createChooser(intent, "Select a File to Upload"),
-                    FILE_SELECT_CODE
-            )
+            startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), FILE_SELECT_CODE)
         } catch (ex: ActivityNotFoundException) { // Potentially direct the user to the Market with a Dialog
             Toast.makeText(context, "Please install a File Manager.", Toast.LENGTH_SHORT).show()
         }
@@ -263,9 +255,9 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         try {
 
             ActivityCompat.requestPermissions(
-                    (context as Activity?)!!,
-                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                    READ_STORAGE_PERMISSION_REQUEST_CODE
+                (context as Activity?)!!,
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                READ_STORAGE_PERMISSION_REQUEST_CODE
             )
         } catch (e: Exception) {
             e.printStackTrace()
@@ -291,7 +283,9 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
     }
 
-    override fun onSaveClicked(string: String?) {
-
+    override fun onSaveClicked(invitedSuppliersListModel: InvitedSuppliersListModel) {
+        invitedSuppliersList.add(invitedSuppliersListModel)
+        inviteBSFragment?.dismiss()
+        invitedSuppliersListAdapter.notifyDataSetChanged()
     }
 }

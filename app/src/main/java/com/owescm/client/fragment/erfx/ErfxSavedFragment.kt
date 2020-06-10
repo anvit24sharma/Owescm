@@ -1,4 +1,4 @@
-package com.owescm.client.fragment.ErfxFragment
+package com.owescm.client.fragment.erfx
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,64 +11,59 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
-import com.owescm.OwescmApplication.Companion.apiKey
-import com.owescm.OwescmApplication.Companion.userType
-import com.owescm.client.Adapter.ErfxLiveAdapter
+import com.owescm.client.adapter.ErfxSavedAdapter
 import com.owescm.client.R
-import com.owescm.client.model.ErfxLiveListResponse
+import com.owescm.client.model.ErfxSavedListResponse
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
-import com.owescm.utils.Constants.Companion.toRequestBody
-import kotlinx.android.synthetic.main.fragment_erfx_live.*
+import kotlinx.android.synthetic.main.fragment_erfx_saved.*
+import kotlinx.android.synthetic.main.fragment_erfx_saved.progressBar
 import okhttp3.RequestBody
 import java.util.HashMap
 
 
-class ErfxLiveFragment : Fragment() {
-
+class ErfxSavedFragment : Fragment() {
     lateinit var homeViewModel: HomeViewModel
-    var erfxLiveList: ArrayList<ErfxLiveListResponse.Data> = ArrayList()
-    lateinit var erfxLiveListAdapter: ErfxLiveAdapter
+    var erfxSavedList: ArrayList<ErfxSavedListResponse.Data> = ArrayList()
+    lateinit var erfxSavedListAdapter: ErfxSavedAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_erfx_live, container, false)
+        return inflater.inflate(R.layout.fragment_erfx_saved, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        getErfxLiveList()
+        getErfxSavedList()
         initRecyclerView()
-
 
     }
 
     private fun initRecyclerView() {
-        erfxLiveListAdapter = erfxLiveList.let {
-            ErfxLiveAdapter(context, it)
+        erfxSavedListAdapter = erfxSavedList.let {
+            ErfxSavedAdapter(context, it)
         }
 
-        rv_erfxLiveList.apply {
-            adapter = erfxLiveListAdapter
+        rv_erfxSavedList.apply {
+            adapter = erfxSavedListAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
     }
 
-    private fun getErfxLiveList() {
+    private fun getErfxSavedList() {
         progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
-        map["api_key"] = toRequestBody(apiKey)
-        map["user_type"] = toRequestBody(userType)
-        map["user_id"] = toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
+        map["api_key"] = Constants.toRequestBody(OwescmApplication.apiKey)
+        map["user_type"] = Constants.toRequestBody(OwescmApplication.userType)
+        map["user_id"] = Constants.toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
                 ?: "-1")
 
-        homeViewModel.getErfxLiveList(map).observe(this, Observer {
+        homeViewModel.getErfxSavedList(map).observe(this, Observer {
             if (it.status == "success") {
                 progressBar.visibility = View.INVISIBLE
-                erfxLiveList.addAll(it.data)
-                erfxLiveListAdapter.notifyDataSetChanged()
+                erfxSavedList.addAll(it.data)
+                erfxSavedListAdapter.notifyDataSetChanged()
             } else {
                 progressBar.visibility = View.INVISIBLE
-
                 Toast.makeText(context, "Erfx Saved List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })
