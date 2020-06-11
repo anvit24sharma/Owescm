@@ -54,11 +54,11 @@ class MainActivity : AppCompatActivity() {
 
             }
         });*/
-        drawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout = findViewById(R.id.drawerLayout)
         val actionBarDrawerToggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
-        navigationView = findViewById(R.id.nav_view)
+        navigationView = findViewById(R.id.navigationView)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setClickOnNavigation()
