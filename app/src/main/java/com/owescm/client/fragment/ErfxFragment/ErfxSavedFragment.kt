@@ -17,8 +17,8 @@ import com.owescm.client.model.ErfxSavedListResponse
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
 import kotlinx.android.synthetic.main.fragment_erfx_saved.*
-import kotlinx.android.synthetic.main.fragment_erfx_saved.progressBar
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_primary_evaluation_open.*
 import okhttp3.RequestBody
 import java.util.HashMap
 

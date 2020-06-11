@@ -35,8 +35,9 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:src="@drawable/ic_close"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
@@ -177,7 +178,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ll_reductionTimer">
 
                 <Button
-                    android:id="@+id/btn_add"
+                    android:id="@+id/btn_create"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginEnd="5dp"
@@ -189,7 +190,7 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/btn_save"
+                    android:id="@+id/btn_close"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="5dp"

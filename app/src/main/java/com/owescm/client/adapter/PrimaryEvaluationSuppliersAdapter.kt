@@ -12,18 +12,19 @@ import com.owescm.client.R
 import com.owescm.client.model.PrimaryEvaluationDetailsResponse
 
 class PrimaryEvaluationSuppliersAdapter(
-    private var mContext: Context?,
-    private var suppliersList: List<PrimaryEvaluationDetailsResponse.Data.ErfxReply>,
-    val mClickListener: ClickListener
+        private var mContext: Context?,
+        private var suppliersList: List<PrimaryEvaluationDetailsResponse.Data.ErfxReply>,
+        val mClickListener: ClickListener
 ) : RecyclerView.Adapter<PrimaryEvaluationSuppliersAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_primary_evaluation_suppliers, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.item_primary_evaluation_suppliers, parent, false)
         return ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(suppliersList[position], position)
+
     }
 
     override fun getItemCount(): Int {
@@ -55,10 +56,14 @@ class PrimaryEvaluationSuppliersAdapter(
             tvCommercial.text = liveModel.commercialRanking.toString()
             tvRecommendation.text = liveModel.finalRecommendationRanking.toString()
 
+            checkBoxShortlist.setOnClickListener {
+                mClickListener.onShortlistClick()
+            }
         }
 
     }
-    interface ClickListener{
+
+    interface ClickListener {
         fun onShortlistClick()
     }
 }
