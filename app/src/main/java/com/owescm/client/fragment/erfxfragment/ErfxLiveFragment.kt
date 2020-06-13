@@ -1,11 +1,11 @@
-package com.owescm.client.fragment.ErfxFragment
+package com.owescm.client.fragment.erfxfragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,15 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
 import com.owescm.OwescmApplication.Companion.apiKey
 import com.owescm.OwescmApplication.Companion.userType
-import com.owescm.client.Adapter.ErfxLiveAdapter
 import com.owescm.client.R
+import com.owescm.client.adapter.ErfxLiveAdapter
 import com.owescm.client.model.ErfxLiveListResponse
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
 import com.owescm.utils.Constants.Companion.toRequestBody
 import kotlinx.android.synthetic.main.fragment_erfx_live.*
 import okhttp3.RequestBody
-import java.util.HashMap
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.set
 
 
 class ErfxLiveFragment : Fragment() {
@@ -61,7 +63,7 @@ class ErfxLiveFragment : Fragment() {
         map["user_id"] = toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
                 ?: "-1")
 
-        homeViewModel.getErfxLiveList(map).observe(this, Observer {
+        homeViewModel.getErfxLiveList(map).observe(viewLifecycleOwner, Observer {
             if (it.status == "success") {
                 progressBar.visibility = View.INVISIBLE
                 erfxLiveList.addAll(it.data)

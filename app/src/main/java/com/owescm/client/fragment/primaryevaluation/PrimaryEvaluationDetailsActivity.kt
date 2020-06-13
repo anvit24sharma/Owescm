@@ -41,7 +41,7 @@ class PrimaryEvaluationDetailsActivity : AppCompatActivity(), PrimaryEvaluationS
     }
 
     private fun btnClick() {
-        btn_create.setOnClickListener {
+        btnCreate.setOnClickListener {
             val builder = android.app.AlertDialog.Builder(this)
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.primary_evaluation_details_shortlist_dialog, null)
             val mBuilder = android.app.AlertDialog.Builder(this).setView(mDialogView)

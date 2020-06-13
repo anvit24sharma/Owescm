@@ -1,4 +1,4 @@
-package com.owescm.client.fragment.ErfxFragment
+package com.owescm.client.fragment.erfxfragment
 
 import android.content.Context
 import android.os.Bundle

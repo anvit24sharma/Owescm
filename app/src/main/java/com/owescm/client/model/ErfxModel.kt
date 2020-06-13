@@ -9,7 +9,7 @@ data class ErfxModel(
     @SerializedName("user_type")
     val userType: String,
     @SerializedName("category")
-    val category: String,
+    val category: Int,
     @SerializedName("contractPeriodFrom")
     val contractPeriodFrom: String,
     @SerializedName("contractPeriodTo")
@@ -23,7 +23,7 @@ data class ErfxModel(
     @SerializedName("specialRequirement")
     val specialRequirement: String,
     @SerializedName("subCategory")
-    val subCategory: String,
+    val subCategory: Int,
     @SerializedName("user_id")
     val userId: String
 )

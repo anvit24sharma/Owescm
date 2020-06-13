@@ -3,10 +3,10 @@ package com.owescm.client.activities
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.owescm.client.fragment.ErfxFragment.ErfxClosedFragment
-import com.owescm.client.fragment.ErfxFragment.ErfxLiveFragment
-import com.owescm.client.fragment.ErfxFragment.ErfxNewFragment
-import com.owescm.client.fragment.ErfxFragment.ErfxSavedFragment
+import com.owescm.client.fragment.erfxfragment.ErfxClosedFragment
+import com.owescm.client.fragment.erfxfragment.ErfxLiveFragment
+import com.owescm.client.fragment.erfxfragment.ErfxNewFragment
+import com.owescm.client.fragment.erfxfragment.ErfxSavedFragment
 import com.owescm.client.R
 import kotlinx.android.synthetic.main.activity_erfx.*
 

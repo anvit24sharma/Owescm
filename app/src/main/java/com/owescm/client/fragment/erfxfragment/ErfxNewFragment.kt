@@ -1,6 +1,7 @@
-package com.owescm.client.fragment.ErfxFragment
+package com.owescm.client.fragment.erfxfragment
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.app.DatePickerDialog
@@ -39,24 +40,19 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
     private val READ_STORAGE_PERMISSION_REQUEST_CODE = 101
     lateinit var homeViewModel: HomeViewModel
-    var category = arrayOf("Security", "B", "C", "D")
-    var subCategory0 = arrayOf("a", "b", "c")
-    var subCategory1 = arrayOf("d", "e", "f")
-    var subCategory2 = arrayOf("g", "h", "i")
-    var subCategory3 = arrayOf("j", "k", "l")
-    var selectedCategory: String = ""
-    var selectedSubCategory: String = ""
+    var category = arrayOf("Security", "Housekeeping", "Transportation", "Catering")
+    var subCategory0 = arrayOf("Security (Manpower)", "Surveillance (Digital)")
+    var subCategory1 = arrayOf("Cleaning", "Reception")
+    var subCategory2 = arrayOf("Employee (Daily)", "Out Station")
+    var subCategory3 = arrayOf("Daily Meals", "Canteen")
+    var selectedCategory: Int = 1
+    var selectedSubCategory: Int = 1
     var string: String = ""
-    var string2: String = ""
-
     lateinit var subcategory: Array<String>
     private val FILE_SELECT_CODE = 0
     var path: String? = null
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_erfx_new, container, false)
     }
 
@@ -65,7 +61,6 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         onClick()
         initSpinners()
-
     }
 
     private fun initSpinners() {
@@ -73,13 +68,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 subcategory = when (position) {
                     0 -> {
                         subCategory0
@@ -94,16 +83,14 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
                         subCategory3
                     }
                 }
-                val subCategoryAdapter =
-                        ArrayAdapter(context!!, android.R.layout.simple_spinner_item, subcategory)
+                val subCategoryAdapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, subcategory)
                 subCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spinnerSubCategory.adapter = subCategoryAdapter
 
-                selectedCategory = category[position]
+                selectedCategory = position +1
             }
         }
-        val categoryAdapter =
-                ArrayAdapter(context!!, android.R.layout.simple_spinner_item, category)
+        val categoryAdapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, category)
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCategory.adapter = categoryAdapter
 
@@ -112,13 +99,8 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
             }
 
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-            ) {
-                selectedSubCategory = subcategory[position].toString()
+            override fun onItemSelected(parent: AdapterView<*>?,view: View?, position: Int, id: Long) {
+                selectedSubCategory = position + 1
             }
 
         }
@@ -126,13 +108,11 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun onClick() {
         btn_create.setOnClickListener {
             val map: MutableMap<String, RequestBody?> = HashMap()
-            if (selectedCategory == "" || selectedSubCategory == "") {
-                Toast.makeText(context, "Please select Category and SubCategory.", Toast.LENGTH_SHORT).show()
-
-            } else if (et_from.text.toString() == "" ||
+           if (et_from.text.toString() == "" ||
                     et_to.text.toString() == "" ||
                     et_headLine.text.toString() == "" ||
                     et_loc.text.toString() == "" ||
@@ -157,28 +137,25 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
                 map["api_key"] = toRequestBody(erfxModel.apiKey)
                 map["user_type"] = toRequestBody(erfxModel.userType)
-                map["category"] = toRequestBody(erfxModel.category)
+                map["category"] = toRequestBody(erfxModel.category.toString())
                 map["contractPeriodFrom"] = toRequestBody(erfxModel.contractPeriodFrom)
                 map["contractPeriodTo"] = toRequestBody(erfxModel.contractPeriodTo)
                 map["headline"] = toRequestBody(erfxModel.headline)
                 map["location"] = toRequestBody(erfxModel.location)
                 map["payment_terms"] = toRequestBody(erfxModel.paymentTerms)
                 map["specialRequirement"] = toRequestBody(erfxModel.specialRequirement)
-                map["subCategory"] = toRequestBody(erfxModel.subCategory)
-                map["user_id"] = toRequestBody(erfxModel.userId)
+                map["subCategory"] = toRequestBody(erfxModel.subCategory.toString())
 
                 if (!checkPermissionForReadExtertalStorage()) {
                     requestPermissionForReadExtertalStorage()
                 }
                 if (path != null) {
                     val file = File(path)
-                    val requestFile: RequestBody =
-                            RequestBody.create(MediaType.parse("multipart/form-data"), file)
+                    val requestFile: RequestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file)
                     val body = MultipartBody.Part.createFormData("erfxDoc", file.name, requestFile)
                     homeViewModel.createErfx(map, body)
                 } else {
                     Toast.makeText(context, "Please Select File.", Toast.LENGTH_SHORT).show()
-
                 }
             }
 
@@ -186,20 +163,14 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
 
         et_from.setOnClickListener {
-
             val c = Calendar.getInstance()
             val mYear = c[Calendar.YEAR]
             val mMonth = c[Calendar.MONTH]
             val mDay = c[Calendar.DAY_OF_MONTH]
 
-
-            val datePickerDialog = DatePickerDialog(
-                    context!!,
-                    OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        et_from.text =
-                                year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
-                    }, mYear, mMonth, mDay
-            )
+            val datePickerDialog = DatePickerDialog(context!!, OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                        et_from.text = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+            }, mYear, mMonth, mDay)
             datePickerDialog.show()
         }
 
@@ -209,14 +180,10 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
             val mMonth = c[Calendar.MONTH]
             val mDay = c[Calendar.DAY_OF_MONTH]
 
-
-            val datePickerDialog = DatePickerDialog(
-                    context!!,
+            val datePickerDialog = DatePickerDialog(context!!,
                     OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        et_to.text =
-                                year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
-                    }, mYear, mMonth, mDay
-            )
+                        et_to.text = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+                    }, mYear, mMonth, mDay)
             datePickerDialog.show()
         }
 
@@ -236,10 +203,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         intent.type = "*/*"
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         try {
-            startActivityForResult(
-                    Intent.createChooser(intent, "Select a File to Upload"),
-                    FILE_SELECT_CODE
-            )
+            startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), FILE_SELECT_CODE)
         } catch (ex: ActivityNotFoundException) { // Potentially direct the user to the Market with a Dialog
             Toast.makeText(context, "Please install a File Manager.", Toast.LENGTH_SHORT).show()
         }
@@ -261,12 +225,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
     @Throws(Exception::class)
     fun requestPermissionForReadExtertalStorage() {
         try {
-
-            ActivityCompat.requestPermissions(
-                    (context as Activity?)!!,
-                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                    READ_STORAGE_PERMISSION_REQUEST_CODE
-            )
+            ActivityCompat.requestPermissions((context as Activity?)!!, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), READ_STORAGE_PERMISSION_REQUEST_CODE)
         } catch (e: Exception) {
             e.printStackTrace()
             throw e
