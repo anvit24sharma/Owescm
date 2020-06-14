@@ -1,390 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f0f0f0">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_create_erfx"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="Request for eBid"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/createEbid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Create eBid"
-            android:textColor="#000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/text_coverHeadline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
-            android:text="Cover Headline"
-            android:textColor="#8000a4"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/createEbid" />
-
-        <EditText
-            android:id="@+id/tv_coverHeadLine"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:hint="Cover Headline"
-            android:orientation="horizontal"
-            android:textColorHint="#7e7e7e"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_coverHeadline" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_erfxLiveList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_create_erfx"
+        tools:listitem="@layout/item_ebid_new" />
 
 
-        <TextView
-            android:id="@+id/text_quote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
-            android:text="Quote"
-            android:textColor="#8000a4"
-            android:textSize="16sp"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_coverHeadLine" />
-
-
-        <EditText
-            android:id="@+id/tv_quote"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:hint="Quote"
-            android:inputType="textPersonName"
-            android:textColorHint="#7e7e7e"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_quote" />
-
-
-        <TextView
-            android:id="@+id/text_validTill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Valid Till"
-            android:textColor="#8000a4"
-            android:textSize="16sp"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_quote" />
-
-        <LinearLayout
-            android:id="@+id/ll_validTill"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_validTill">
-
-            <EditText
-                android:id="@+id/tv_validTill"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-
-                android:layout_weight="2"
-                android:hint="Valid till (dd-mm-yy)"
-                android:inputType="number"
-                android:padding="4dp"
-                android:textColorHint="#7e7e7e" />
-
-            <ImageView
-                android:id="@+id/calender_validTill"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_date" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/text_upload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Bid Doc Upload "
-            android:textColor="#8000a4"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_validTill" />
-
-        <LinearLayout
-            android:id="@+id/ll_upload"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_upload">
-
-            <EditText
-                android:id="@+id/tv_upload"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="2"
-                android:hint="Bid Doc Upload"
-                android:inputType="textEmailAddress"
-                android:textColorHint="#7e7e7e" />
-
-            <Button
-                android:id="@+id/btn_choose"
-                android:layout_width="160dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="#8000a4"
-                android:text="Choose"
-                android:textColor="#fff" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tandc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Terms &amp; conditions"
-            android:textColor="#000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_upload" />
-
-        <LinearLayout
-            android:id="@+id/ll_contract"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tandc">
-
-            <TextView
-                android:id="@+id/text_contractFrom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_weight="1"
-                android:text="Contract From"
-                android:textColor="#8000a4"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/text_contractTo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:layout_weight="1"
-                android:text="Contract To"
-                android:textColor="#8000a4"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_et_contract"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_contract">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:weightSum="3">
-
-                <EditText
-                    android:id="@+id/tv_from"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-
-                    android:layout_weight="2"
-                    android:hint="Contract from"
-                    android:inputType="number"
-                    android:padding="4dp"
-                    android:textColorHint="#7e7e7e" />
-
-                <ImageView
-                    android:id="@+id/calender_from"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_date" />
-            </LinearLayout>
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:weightSum="3">
-
-                <EditText
-                    android:id="@+id/tv_to"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_weight="2"
-                    android:hint="Contract to"
-                    android:inputType="number"
-                    android:padding="4dp"
-                    android:textColorHint="#7e7e7e" />
-
-                <ImageView
-                    android:id="@+id/calender_to"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_date" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/text_paymentTerms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
-            android:text="Payment Terms"
-            android:textColor="#8000a4"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_et_contract" />
-
-        <LinearLayout
-            android:id="@+id/ll_paymentTerms"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_paymentTerms">
-
-            <EditText
-                android:id="@+id/tv_paymentTerms"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="2"
-                android:hint="Payment Terms"
-                android:inputType="textEmailAddress"
-                android:textColorHint="#7e7e7e" />
-
-
-            <ImageView
-                android:id="@+id/edit"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:src="@drawable/edit" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/text_remarks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
-            android:text="Remarks"
-            android:textColor="#8000a4"
-            android:textSize="16sp"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_paymentTerms" />
-
-
-        <EditText
-            android:id="@+id/tv_remarks"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:hint="Remarks"
-            android:inputType="textPersonName"
-            android:textColorHint="#7e7e7e"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_remarks" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="13dp"
-            android:orientation="horizontal"
-            android:padding="6dp"
-            android:weightSum="3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_remarks">
-
-            <Button
-                android:id="@+id/btn_add"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginEnd="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_choose"
-                android:text="I accept &amp; publish"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="16sp" />
-
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="5dp"
-                android:layout_weight="2"
-
-                android:background="@drawable/btn_light_purple"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textColor="#8000a4"
-                android:textSize="16sp" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

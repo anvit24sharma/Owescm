@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f0f0f0">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#ffffff"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#fff">
+
+                <TextView
+                    android:id="@+id/tv_eRFX_No"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:text="eRFX No - #5849811178567"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@id/purple_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/purple_img"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/btn_purple"
+                    android:src="@drawable/circle"
+                    app:layout_constraintBottom_toTopOf="@id/txt_location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="#f0f0f0"
+                    app:layout_constraintTop_toBottomOf="@id/purple_img" />
+
+                <TextView
+                    android:id="@+id/txt_clientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Client Name:"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintStart_toEndOf="@id/purple_img"
+                    app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
+
+                <TextView
+                    android:id="@+id/tv_clientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="10dp"
+                    android:text="client name"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@id/txt_clientName"
+                    app:layout_constraintTop_toBottomOf="@id/tv_eRFX_No" />
+
+                <TextView
+                    android:id="@+id/txt_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Location:"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/purple_img"
+                    app:layout_constraintTop_toBottomOf="@id/txt_clientName" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Location"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@id/txt_location"
+                    app:layout_constraintTop_toBottomOf="@id/txt_clientName" />
+
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#f8f8f8"
+                    app:layout_constraintTop_toBottomOf="@id/txt_location" />
+
+                <TextView
+                    android:id="@+id/tv_Security"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="eRfx Doc"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view2" />
+
+                <Button
+                    android:id="@+id/btnDownload"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/btn_purple"
+                    android:text="Download"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Security" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="#ffffff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card1">
+
+
+            <TextView
+                android:id="@+id/text_coverHeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Cover Headline"
+                android:textColor="#8000a4"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/tv_coverHeadLine"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:hint="Cover Headline"
+                android:orientation="horizontal"
+                android:textColorHint="#7e7e7e"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_coverHeadline" />
+
+
+            <TextView
+                android:id="@+id/text_quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Quote"
+                android:textColor="#8000a4"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_coverHeadLine" />
+
+
+            <EditText
+                android:id="@+id/tv_quote"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:hint="Quote"
+                android:inputType="textPersonName"
+                android:textColorHint="#7e7e7e"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_quote" />
+
+
+            <TextView
+                android:id="@+id/text_validTill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Valid Till"
+                android:textColor="#8000a4"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_quote" />
+
+            <LinearLayout
+                android:id="@+id/ll_validTill"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_validTill">
+
+                <EditText
+                    android:id="@+id/tv_validTill"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:layout_weight="2"
+                    android:hint="Valid till (dd-mm-yy)"
+                    android:inputType="number"
+                    android:padding="4dp"
+                    android:textColorHint="#7e7e7e" />
+
+                <ImageView
+                    android:id="@+id/calender_validTill"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_date" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Bid Doc Upload "
+                android:textColor="#8000a4"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_validTill" />
+
+            <LinearLayout
+                android:id="@+id/ll_upload"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_upload">
+
+                <EditText
+                    android:id="@+id/tv_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:hint="Bid Doc Upload"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#7e7e7e" />
+
+                <Button
+                    android:id="@+id/btn_choose"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#8000a4"
+                    android:text="Choose"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tandc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Terms &amp; conditions"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_upload" />
+
+            <LinearLayout
+                android:id="@+id/ll_contract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tandc">
+
+                <TextView
+                    android:id="@+id/text_contractFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_weight="1"
+                    android:text="Contract From"
+                    android:textColor="#8000a4"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/text_contractTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:text="Contract To"
+                    android:textColor="#8000a4"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_et_contract"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_contract">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/tv_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+
+                        android:layout_weight="2"
+                        android:hint="Contract from"
+                        android:inputType="number"
+                        android:padding="4dp"
+                        android:textColorHint="#7e7e7e" />
+
+                    <ImageView
+                        android:id="@+id/calender_from"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_date" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/tv_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:hint="Contract to"
+                        android:inputType="number"
+                        android:padding="4dp"
+                        android:textColorHint="#7e7e7e" />
+
+                    <ImageView
+                        android:id="@+id/calender_to"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_date" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_paymentTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Payment Terms"
+                android:textColor="#8000a4"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_et_contract" />
+
+            <LinearLayout
+                android:id="@+id/ll_paymentTerms"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_paymentTerms">
+
+                <EditText
+                    android:id="@+id/tv_paymentTerms"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:hint="Payment Terms"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#7e7e7e" />
+
+
+                <ImageView
+                    android:id="@+id/edit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/edit" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_remarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Remarks"
+                android:textColor="#8000a4"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_paymentTerms" />
+
+
+            <EditText
+                android:id="@+id/tv_remarks"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:hint="Remarks"
+                android:inputType="textPersonName"
+                android:textColorHint="#7e7e7e"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_remarks" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="13dp"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_remarks">
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_choose"
+                    android:text="I accept &amp; publish"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/btn_light_purple"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="#8000a4"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

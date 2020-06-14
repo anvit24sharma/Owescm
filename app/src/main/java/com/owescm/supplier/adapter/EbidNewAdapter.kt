@@ -12,7 +12,8 @@ import com.owescm.supplier.model.EbidNewModel
 class EbidNewAdapter
     (
     private var mContext: Context?,
-    private var ebidNewList: ArrayList<EbidNewModel>
+    private var ebidNewList: ArrayList<EbidNewModel>,
+    val mCLickListener: ClickListener
 ) : RecyclerView.Adapter<EbidNewAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
@@ -32,11 +33,11 @@ class EbidNewAdapter
 
         private val tvErfxNo = itemView.findViewById<TextView>(R.id.tv_eRFX_No)
         private val tvErfxStatus = itemView.findViewById<TextView>(R.id.tv_erfxStatus)
+        private var tvTest = itemView.findViewById<TextView>(R.id.tv_test)
         private var tvLocation = itemView.findViewById<TextView>(R.id.tv_location)
         private var tvDate = itemView.findViewById<TextView>(R.id.tv_createdAt_Date)
-        private var tvTime = itemView.findViewById<TextView>(R.id.tv_createdAt_Time)
         private var tvSecurity = itemView.findViewById<TextView>(R.id.tv_Security)
-        private var tvTestHeadline = itemView.findViewById<TextView>(R.id.tv_test_headline)
+        private var btnViewDetails = itemView.findViewById<TextView>(R.id.btn_viewDetails)
 
 
         fun setData(newModel: EbidNewModel, position: Int) {
@@ -44,12 +45,16 @@ class EbidNewAdapter
             tvErfxStatus.text = newModel.erfxStatus
             tvLocation.text = newModel.location
             tvDate.text = newModel.createdAtDate.toString()
-            tvTime.text = newModel.createdAtTime.toString()
             tvSecurity.text = newModel.textSecurity
-            tvTestHeadline.text = newModel.textTestHeadLine
+            btnViewDetails.setOnClickListener {
+                mCLickListener.onViewDetailsClick()
 
-
+            }
         }
 
+    }
+
+    interface ClickListener {
+        fun onViewDetailsClick()
     }
 }
