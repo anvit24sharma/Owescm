@@ -23,7 +23,7 @@ class OwescmRepository(private val remoteApiEndPoint: OwescmRemoteEndPoint) {
         }
     }
 
-    fun createErfx(erfxRequest: MutableMap<String, RequestBody?>, body: MultipartBody.Part): MutableLiveData<DataWrapper<ErfxModel>> {
+    fun createErfx(erfxRequest: MutableMap<String, RequestBody?>, body: MultipartBody.Part): MutableLiveData<DataWrapper<CreateErfxResponseModel>> {
         return makeNetworkCall {
             retrofitCall = remoteApiEndPoint.createErfx(erfxRequest,body)
         }
@@ -32,6 +32,11 @@ class OwescmRepository(private val remoteApiEndPoint: OwescmRemoteEndPoint) {
     fun getErfxLiveList(erfxLiveRequest: MutableMap<String, RequestBody?>): MutableLiveData<DataWrapper<ErfxLiveListResponse>> {
         return makeNetworkCall {
             retrofitCall = remoteApiEndPoint.getErfxLiveList(erfxLiveRequest)
+        }
+    }
+    fun createEAuction(eAuctionLiveRequest: MutableMap<String, RequestBody?>): MutableLiveData<DataWrapper<CreateErfxResponseModel>> {
+        return makeNetworkCall {
+            retrofitCall = remoteApiEndPoint.createEAuction(eAuctionLiveRequest)
         }
     }
 

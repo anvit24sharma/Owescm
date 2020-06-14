@@ -57,13 +57,13 @@ class PrimaryEvaluationSuppliersAdapter(
             tvRecommendation.text = liveModel.finalRecommendationRanking.toString()
 
             checkBoxShortlist.setOnClickListener {
-                mClickListener.onShortlistClick()
+                mClickListener.onShortlistClick(liveModel.supplierId)
             }
         }
 
     }
 
     interface ClickListener {
-        fun onShortlistClick()
+        fun onShortlistClick(supplierId: String)
     }
 }

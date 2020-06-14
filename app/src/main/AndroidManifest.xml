@@ -3,8 +3,10 @@
     package="com.owescm.client">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:name="com.owescm.OwescmApplication"
@@ -33,6 +35,8 @@
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".MainActivity" />
+        <service android:name="com.owescm.remote.DownloadService"/>
+
     </application>
 
 </manifest>

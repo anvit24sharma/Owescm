@@ -1,4 +1,4 @@
-package com.owescm.client.fragment.erfxfragment
+package com.owescm.client.fragment.erfx
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -40,8 +40,6 @@ class ErfxLiveFragment : Fragment() {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         getErfxLiveList()
         initRecyclerView()
-
-
     }
 
     private fun initRecyclerView() {
@@ -60,8 +58,7 @@ class ErfxLiveFragment : Fragment() {
         val map: MutableMap<String, RequestBody?> = HashMap()
         map["api_key"] = toRequestBody(apiKey)
         map["user_type"] = toRequestBody(userType)
-        map["user_id"] = toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
-                ?: "-1")
+        map["user_id"] = toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1") ?: "-1")
 
         homeViewModel.getErfxLiveList(map).observe(viewLifecycleOwner, Observer {
             if (it.status == "success") {
@@ -70,7 +67,6 @@ class ErfxLiveFragment : Fragment() {
                 erfxLiveListAdapter.notifyDataSetChanged()
             } else {
                 progressBar.visibility = View.INVISIBLE
-
                 Toast.makeText(context, "Erfx Saved List Api Failed", Toast.LENGTH_SHORT).show()
             }
         })

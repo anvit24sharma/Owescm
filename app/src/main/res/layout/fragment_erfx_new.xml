@@ -393,7 +393,6 @@
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
                 android:background="#8000a4"
-
                 android:text="Create"
                 android:textColor="#fff"
                 android:textSize="16sp" />
@@ -429,7 +428,9 @@
             android:background="#ffffff"
             app:cardCornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_invite">
+            app:layout_constraintTop_toBottomOf="@id/btn_invite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -448,10 +449,12 @@
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_peOpenSelectSupplierList"
+                    android:id="@+id/rvInvitedSuppliers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/item_invite_suppliers_erfx_new" />
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_invite_suppliers_erfx_new"
+                    android:layout_marginBottom="20dp"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

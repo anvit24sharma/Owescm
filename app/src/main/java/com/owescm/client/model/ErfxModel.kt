@@ -25,5 +25,7 @@ data class ErfxModel(
     @SerializedName("subCategory")
     val subCategory: Int,
     @SerializedName("user_id")
-    val userId: String
+    val userId: String,
+    @SerializedName("invited_suppliers")
+    val invitedSuppliers: List<InvitedSuppliersListModel>
 )

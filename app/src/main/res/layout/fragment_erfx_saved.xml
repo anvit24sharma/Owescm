@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.owescm.client.fragment.erfxfragment.ErfxSavedFragment">
+    tools:context="com.owescm.client.fragment.erfx.ErfxSavedFragment">
+
 
     <ProgressBar
         android:id="@+id/progress_Bar"
@@ -14,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_saved_erfx"
         android:layout_width="match_parent"

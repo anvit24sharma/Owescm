@@ -1,5 +1,6 @@
 package com.owescm.client
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -8,8 +9,11 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
+import com.owescm.OwescmApplication.Companion.prefs
+import com.owescm.client.activities.LoginActivity
 import com.owescm.client.adapter.ViewPagerAdapter
 import com.owescm.client.fragment.HomeFragment
+import kotlinx.android.synthetic.main.drawer_layout.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -63,7 +67,6 @@ class MainActivity : AppCompatActivity() {
 
         setClickOnNavigation()
 
-
     }
 
     private fun openMainFragment() {
@@ -81,6 +84,14 @@ class MainActivity : AppCompatActivity() {
                 drawerLayout.closeDrawers()
             }
             true
+        }
+
+        logout.setOnClickListener {
+            val intent = Intent(this,LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP )
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            prefs.edit().clear().apply()
         }
 
     }

@@ -1,4 +1,4 @@
-package com.owescm.client.fragment.erfxfragment
+package com.owescm.client.fragment.erfx
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -6,6 +6,7 @@ import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
+import android.app.ProgressDialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -20,11 +21,16 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.owescm.OwescmApplication
 import com.owescm.OwescmApplication.Companion.apiKey
 import com.owescm.OwescmApplication.Companion.userType
+import com.owescm.client.MainActivity
 import com.owescm.client.R
+import com.owescm.client.adapter.InvitedSuppliersListAdapter
 import com.owescm.client.model.ErfxModel
+import com.owescm.client.model.InvitedSuppliersListModel
 import com.owescm.client.viewmodel.HomeViewModel
 import com.owescm.utils.Constants
 import com.owescm.utils.FileUtils
@@ -32,12 +38,15 @@ import kotlinx.android.synthetic.main.fragment_erfx_new.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.File
 import java.util.*
 
 
 class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheetListner {
 
+    var invitedSuppliersList = ArrayList<InvitedSuppliersListModel>()
     private val READ_STORAGE_PERMISSION_REQUEST_CODE = 101
     lateinit var homeViewModel: HomeViewModel
     var category = arrayOf("Security", "Housekeeping", "Transportation", "Catering")
@@ -48,9 +57,11 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
     var selectedCategory: Int = 1
     var selectedSubCategory: Int = 1
     var string: String = ""
+    lateinit var invitedSuppliersListAdapter: InvitedSuppliersListAdapter
     lateinit var subcategory: Array<String>
     private val FILE_SELECT_CODE = 0
     var path: String? = null
+    var inviteBSFragment : ErfxNewInviteSuppliersBSFragment ?=null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_erfx_new, container, false)
@@ -61,6 +72,19 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         onClick()
         initSpinners()
+        initRecyclerView()
+
+    }
+
+    private fun initRecyclerView() {
+        invitedSuppliersListAdapter = invitedSuppliersList.let {
+            InvitedSuppliersListAdapter(context, it)
+        }
+
+        rvInvitedSuppliers.apply {
+            adapter = invitedSuppliersListAdapter
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        }
     }
 
     private fun initSpinners() {
@@ -111,30 +135,38 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
     @SuppressLint("SetTextI18n")
     private fun onClick() {
         btn_create.setOnClickListener {
+            val progressDialog =ProgressDialog(context)
+            progressDialog.setTitle("Creating...")
+            progressDialog.setCanceledOnTouchOutside(false)
+
             val map: MutableMap<String, RequestBody?> = HashMap()
-           if (et_from.text.toString() == "" ||
-                    et_to.text.toString() == "" ||
-                    et_headLine.text.toString() == "" ||
-                    et_loc.text.toString() == "" ||
-                    et_paymentTerms.text.toString() == "" ||
-                    et_specialReq.text.toString() == "") {
+            if (et_from.text.toString() == "" ||
+                et_to.text.toString() == "" ||
+                et_headLine.text.toString() == "" ||
+                et_loc.text.toString() == "" ||
+                et_paymentTerms.text.toString() == "" ||
+                et_specialReq.text.toString() == "") {
                 Toast.makeText(context, "Please Fill All Details.", Toast.LENGTH_SHORT).show()
 
             } else {
+                progressDialog.show()
+
                 val erfxModel = ErfxModel(
-                        apiKey,
-                        userType,
-                        selectedCategory,
-                        et_from.text.toString(),
-                        et_to.text.toString(),
-                        et_headLine.text.toString(),
-                        et_loc.text.toString(),
-                        et_paymentTerms.text.toString(),
-                        et_specialReq.text.toString(),
-                        selectedSubCategory,
-                        OwescmApplication.prefs.getString(Constants.USER_ID, "-1") ?: "-1"
+                    apiKey,
+                    userType,
+                    selectedCategory,
+                    et_from.text.toString(),
+                    et_to.text.toString(),
+                    et_headLine.text.toString(),
+                    et_loc.text.toString(),
+                    et_paymentTerms.text.toString(),
+                    et_specialReq.text.toString(),
+                    selectedSubCategory,
+                    OwescmApplication.prefs.getString(Constants.USER_ID, "-1") ?: "-1",
+                    invitedSuppliersList
                 )
 
+                val invitedList :JSONObject = toJson(invitedSuppliersList)
                 map["api_key"] = toRequestBody(erfxModel.apiKey)
                 map["user_type"] = toRequestBody(erfxModel.userType)
                 map["category"] = toRequestBody(erfxModel.category.toString())
@@ -145,6 +177,8 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
                 map["payment_terms"] = toRequestBody(erfxModel.paymentTerms)
                 map["specialRequirement"] = toRequestBody(erfxModel.specialRequirement)
                 map["subCategory"] = toRequestBody(erfxModel.subCategory.toString())
+                map["user_id"] = toRequestBody(erfxModel.userId)
+                map["suppliersData"] = toRequestBody(invitedList.toString())
 
                 if (!checkPermissionForReadExtertalStorage()) {
                     requestPermissionForReadExtertalStorage()
@@ -153,8 +187,21 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
                     val file = File(path)
                     val requestFile: RequestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file)
                     val body = MultipartBody.Part.createFormData("erfxDoc", file.name, requestFile)
-                    homeViewModel.createErfx(map, body)
+                    homeViewModel.createErfx(map, body).observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+                        if(it.status == "success"){
+                            progressDialog.dismiss()
+                            Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                            val intent = Intent(context, MainActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP )
+                            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                            startActivity(intent)
+                        }else{
+                            progressDialog.dismiss()
+                            Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 } else {
+                    progressDialog.dismiss()
                     Toast.makeText(context, "Please Select File.", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -169,7 +216,7 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
             val mDay = c[Calendar.DAY_OF_MONTH]
 
             val datePickerDialog = DatePickerDialog(context!!, OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        et_from.text = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+                et_from.text = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
             }, mYear, mMonth, mDay)
             datePickerDialog.show()
         }
@@ -181,9 +228,9 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
             val mDay = c[Calendar.DAY_OF_MONTH]
 
             val datePickerDialog = DatePickerDialog(context!!,
-                    OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        et_to.text = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
-                    }, mYear, mMonth, mDay)
+                OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    et_to.text = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+                }, mYear, mMonth, mDay)
             datePickerDialog.show()
         }
 
@@ -195,6 +242,21 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
             val inviteBSFragment = ErfxNewInviteSuppliersBSFragment("string", this)
             inviteBSFragment.show(fragmentManager!!, "schedule")
         }
+    }
+
+    private fun toJson(invitedSuppliersList: ArrayList<InvitedSuppliersListModel>): JSONObject {
+        val jArray =  JSONArray()
+        invitedSuppliersList.forEach {
+           val jGroup =  JSONObject()
+           jGroup.put("supplierName", it.supplierEmail)
+           jGroup.put("contactPersonName", it.contactPersonName)
+           jGroup.put("supplierEmail", it.supplierEmail)
+           jGroup.put("supplierMobNumber", it.supplierMobNumber)
+           jArray.put(jGroup)
+       }
+        val jObject  = JSONObject()
+        jObject.put("suppliersData",jArray)
+        return jObject
     }
 
 
@@ -250,7 +312,9 @@ class ErfxNewFragment : Fragment(), ErfxNewInviteSuppliersBSFragment.BottomSheet
 
     }
 
-    override fun onSaveClicked(string: String?) {
-
+    override fun onSaveClicked(invitedSuppliersListModel: InvitedSuppliersListModel) {
+        invitedSuppliersList.add(invitedSuppliersListModel)
+        inviteBSFragment?.dismiss()
+        invitedSuppliersListAdapter.notifyDataSetChanged()
     }
 }

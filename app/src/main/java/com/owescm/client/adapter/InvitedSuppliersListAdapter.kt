@@ -1,4 +1,4 @@
-package com.owescm.client.Adapter
+package com.owescm.client.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,17 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.owescm.client.Model.InvitedSuppliersListModel
 import com.owescm.client.R
+import com.owescm.client.model.InvitedSuppliersListModel
 
-class InvitedSuppliersListAdapter
-    (
-    private var mContext: Context?,
-    private var invitedSuppliersList: ArrayList<InvitedSuppliersListModel>
-) : RecyclerView.Adapter<InvitedSuppliersListAdapter.ViewHolder>() {
+class InvitedSuppliersListAdapter(private var mContext: Context?, private var invitedSuppliersList: ArrayList<InvitedSuppliersListModel>) : RecyclerView.Adapter<InvitedSuppliersListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_erfx_new_invited_supplier_list, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_erfx_new_invited_supplier_list, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -35,16 +30,11 @@ class InvitedSuppliersListAdapter
         private var tvSMobileNo = itemView.findViewById<TextView>(R.id.tv_supplierMobileNo)
         private var tvSEmail = itemView.findViewById<TextView>(R.id.tv_supplierEmail)
 
-
-
         fun setData(supplierModel: InvitedSuppliersListModel, position: Int) {
-            tvSName.text = supplierModel.sName
-            tvSContactPersonName.text = supplierModel.sContactPersonNAme
-            tvSMobileNo.text = supplierModel.sMobileNo.toString()
-            tvSEmail.text = supplierModel.sEmail
-
-
-
+            tvSName.text = supplierModel.supplierName
+            tvSContactPersonName.text = supplierModel.contactPersonName
+            tvSMobileNo.text = supplierModel.supplierMobNumber.toString()
+            tvSEmail.text = supplierModel.supplierEmail
         }
 
     }

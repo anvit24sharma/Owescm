@@ -11,7 +11,8 @@ import okhttp3.RequestBody
 class HomeViewModel :ViewModel(){
 
     lateinit var countsLiveData :LiveData<CountModel>
-    lateinit var createErfxLiveData:  LiveData<ErfxModel>
+    lateinit var createErfxLiveData:  LiveData<CreateErfxResponseModel>
+    lateinit var createEauctionLiveData:  LiveData<CreateErfxResponseModel>
     lateinit var erfxLiveListResponse:  LiveData<ErfxLiveListResponse>
     lateinit var erfxSavedListResponse:  LiveData<ErfxSavedListResponse>
     lateinit var openPrimaryEvaluationLiveListResponse:  LiveData<OpenPrimaryEvaluationListResponse>
@@ -25,7 +26,7 @@ class HomeViewModel :ViewModel(){
         return countsLiveData
     }
 
-    fun createErfx(erfxRequest: MutableMap<String, RequestBody?>, body: MultipartBody.Part) : LiveData<ErfxModel>{
+    fun createErfx(erfxRequest: MutableMap<String, RequestBody?>, body: MultipartBody.Part) : LiveData<CreateErfxResponseModel>{
         createErfxLiveData = Transformations.map(getOwescmRepository().createErfx(erfxRequest,body)){
             return@map it.responseData
         }
@@ -38,6 +39,14 @@ class HomeViewModel :ViewModel(){
             return@map it.responseData
         }
         return erfxLiveListResponse
+    }
+
+    fun createEAuction(
+        getEauctionLiveMap: MutableMap<String, RequestBody?>) : LiveData<CreateErfxResponseModel>{
+        createEauctionLiveData = Transformations.map(getOwescmRepository().createEAuction(getEauctionLiveMap)){
+            return@map it.responseData
+        }
+        return createEauctionLiveData
     }
 
     fun getErfxSavedList(

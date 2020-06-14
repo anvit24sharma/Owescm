@@ -2,6 +2,7 @@ package com.owescm.client.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.owescm.client.fragment.primaryevaluation.PrimaryEvaluationClosedFragment
 import com.owescm.client.fragment.primaryevaluation.PrimaryEvaluationOpenFragment
 import com.owescm.client.R
@@ -18,6 +19,9 @@ class PrimaryEvaluationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_primary_evaluation)
 
+        supportActionBar?.title = "Primary Evaluation"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         from = intent.getStringExtra("from")?:""
         openCount = intent.getIntExtra("OpenCount",-1)
         closedCount = intent.getIntExtra("ClosedCount",-1)
@@ -32,6 +36,13 @@ class PrimaryEvaluationActivity : AppCompatActivity() {
         }
     }
 
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home){
+            super.onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     private fun openFragment() {
         when (from) {
