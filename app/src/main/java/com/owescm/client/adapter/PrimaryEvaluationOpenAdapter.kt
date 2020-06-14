@@ -10,9 +10,9 @@ import com.owescm.client.R
 import com.owescm.client.model.OpenPrimaryEvaluationListResponse
 
 class PrimaryEvaluationOpenAdapter(
-    private var mContext: Context?,
-    private var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data>,
-    val mCLickListener: ClickListener
+        private var mContext: Context?,
+        private var peOpenList: ArrayList<OpenPrimaryEvaluationListResponse.Data>,
+        val mCLickListener: ClickListener
 ) : RecyclerView.Adapter<PrimaryEvaluationOpenAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
@@ -47,7 +47,7 @@ class PrimaryEvaluationOpenAdapter(
 
     }
 
-    interface ClickListener{
-        fun onSelectClick(erfxId :String)
+    interface ClickListener {
+        fun onSelectClick(erfxId: String)
     }
 }

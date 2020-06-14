@@ -61,7 +61,7 @@ class ErfxLiveFragment : Fragment() {
         map["user_id"] = toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
                 ?: "-1")
 
-        homeViewModel.getErfxLiveList(map).observe(this, Observer {
+        homeViewModel.getErfxLiveList(map).observe(viewLifecycleOwner, Observer {
             if (it.status == "success") {
                 progressBar.visibility = View.INVISIBLE
                 erfxLiveList.addAll(it.data)

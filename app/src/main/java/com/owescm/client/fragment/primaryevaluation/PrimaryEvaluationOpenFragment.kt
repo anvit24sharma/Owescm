@@ -58,7 +58,7 @@ class PrimaryEvaluationOpenFragment : Fragment(), PrimaryEvaluationOpenAdapter.C
         map["user_id"] = Constants.toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1")
                 ?: "-1")
 
-        homeViewModel.getOpenPrimaryEvaluationList(map).observe(this, Observer {
+        homeViewModel.getOpenPrimaryEvaluationList(map).observe(viewLifecycleOwner, Observer {
             if (it.status == "success") {
                 progressBar.visibility = View.INVISIBLE
 
