@@ -170,6 +170,7 @@ class PrimaryEvaluationDetailsActivity : AppCompatActivity(),
 
     private fun startDownload() {
         val intent = Intent(this, DownloadService::class.java)
+        intent.putExtra("erfxDocName", primaryEvaluationDetails.data.primaryEvaluationOpen[0].erfxDoc)
         startService(intent)
     }
 
@@ -239,8 +240,8 @@ class PrimaryEvaluationDetailsActivity : AppCompatActivity(),
     private fun getPrimaryEvaluationDetails() {
         progressBar.visibility = View.VISIBLE
         val map: MutableMap<String, RequestBody?> = HashMap()
-        map["api_key"] = toRequestBody(OwescmApplication.apiKey)
-        map["user_type"] = toRequestBody(OwescmApplication.userType)
+        map["api_key"] = toRequestBody(apiKey)
+        map["user_type"] = toRequestBody(userType)
         map["user_id"] = toRequestBody(OwescmApplication.prefs.getString(Constants.USER_ID, "-1") ?: "-1")
         map["erfx_id"] = toRequestBody(erfxId)
 

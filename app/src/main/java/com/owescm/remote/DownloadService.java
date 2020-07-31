@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.owescm.client.MainActivity;
 import com.owescm.client.R;
 import com.owescm.client.fragment.primaryevaluation.PrimaryEvaluationDetailsActivity;
 import com.owescm.services.local.Download;
@@ -42,6 +41,7 @@ public class DownloadService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
 
+        String erfxDocName = intent.getStringExtra("erfxDocName");
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationBuilder = new NotificationCompat.Builder(this)
@@ -51,38 +51,35 @@ public class DownloadService extends IntentService {
                 .setAutoCancel(true);
         notificationManager.notify(0, notificationBuilder.build());
 
-        initDownload();
+        initDownload(erfxDocName);
 
     }
 
-    private void initDownload(){
+    private void initDownload(String erfxDocName){
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-            .build();
-
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL+"/").build();
         OwescmRemoteEndPoint retrofitInterface = retrofit.create(OwescmRemoteEndPoint.class);
-
-        Call<ResponseBody> request = retrofitInterface.downloadFile();
+        Call<ResponseBody> request = retrofitInterface.downloadFile(erfxDocName);
         try {
-
-            downloadFile(request.execute().body());
-
+            if(request != null) {
+                ResponseBody body = request.execute().body();
+                if (body != null) {
+                    downloadFile(body, erfxDocName);
+                }
+            }
         } catch (IOException e) {
-
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
-
         }
     }
 
-    private void downloadFile(ResponseBody body) throws IOException {
+    private void downloadFile(ResponseBody body, String erfxDocName) throws IOException {
 
         int count;
         byte data[] = new byte[1024 * 4];
         long fileSize = body.contentLength();
         InputStream bis = new BufferedInputStream(body.byteStream(), 1024 * 8);
-        File outputFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "file.jpg");
+        File outputFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), erfxDocName.split("/")[2]);
         OutputStream output = new FileOutputStream(outputFile);
         long total = 0;
         long startTime = System.currentTimeMillis();

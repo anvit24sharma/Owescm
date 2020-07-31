@@ -42,7 +42,7 @@ interface OwescmRemoteEndPoint {
     @POST("/app/client/getPrimaryEvaluationOpenErfx")
     fun getPrimaryEvaluationDetails(@PartMap erfxLiveRequest: MutableMap<String, RequestBody?>): Call<PrimaryEvaluationDetailsResponse>
 
-    @GET("images/profile_photo/test client_15892231228822.jpg")
+    @GET
     @Streaming
-    fun downloadFile(): Call<ResponseBody?>?
+    fun downloadFile(@Url erfxDocName: String): Call<ResponseBody>?
 }
